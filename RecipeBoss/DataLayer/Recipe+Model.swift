@@ -11,7 +11,7 @@ struct Recipe: Decodable {
     
     let title: String
     let description: String
-    let thumbnailPath: String
+    let thumbnailUrlPath: String
     let thumbnailAltText: String
     let details: RecipeDetails
     let ingredients: [Ingredient]
@@ -19,7 +19,7 @@ struct Recipe: Decodable {
     private enum CodingKeys: String, CodingKey {
         case title = "dynamicTitle"
         case description = "dynamicDescription"
-        case thumbnailPath = "dynamicThumbnail"
+        case thumbnailUrlPath = "dynamicThumbnail"
         case thumbnailAltText = "dynamicThumbnailAlt"
         case details = "recipeDetails"
         case ingredients = "ingredients"

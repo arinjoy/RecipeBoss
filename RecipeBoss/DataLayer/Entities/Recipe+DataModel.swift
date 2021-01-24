@@ -1,5 +1,5 @@
 //
-//  Recipe+Model.swift
+//  Recipe+DataModel.swift
 //  RecipeBoss
 //
 //  Created by Arinjoy Biswas on 22/1/21.

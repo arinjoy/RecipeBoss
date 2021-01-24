@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		0E071AAF25BAD80A00FDB993 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AAE25BAD80A00FDB993 /* NetworkServiceType.swift */; };
 		0E071AB325BAD82700FDB993 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AB225BAD82700FDB993 /* Resource.swift */; };
-		0E071AB625BAD88A00FDB993 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AB525BAD88A00FDB993 /* ApiConstants.swift */; };
 		0E071AB925BAD8D300FDB993 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AB825BAD8D300FDB993 /* NetworkService.swift */; };
 		0E071ABD25BADA8500FDB993 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071ABC25BADA8500FDB993 /* Publisher+Extensions.swift */; };
 		0E071AC325BAE12A00FDB993 /* LocalStubbedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AC225BAE12A00FDB993 /* LocalStubbedDataService.swift */; };
 		0E071AC725BAE18000FDB993 /* recipesSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E071AC625BAE18000FDB993 /* recipesSample.json */; };
 		0E071ACA25BAE1CB00FDB993 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AC925BAE1CB00FDB993 /* Scheduler.swift */; };
-		0E071ACF25BAE8D200FDB993 /* Recipe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071ACE25BAE8D200FDB993 /* Recipe+Model.swift */; };
+		0E071ACF25BAE8D200FDB993 /* Recipe+DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071ACE25BAE8D200FDB993 /* Recipe+DataModel.swift */; };
 		0E071AD225BAEEA800FDB993 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AD125BAEEA800FDB993 /* ServicesProvider.swift */; };
 		0E1E381D25B98D3100CE7BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E381C25B98D3100CE7BE5 /* AppDelegate.swift */; };
 		0E1E382125B98D3100CE7BE5 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E382025B98D3100CE7BE5 /* RecipeListViewController.swift */; };
@@ -35,6 +34,10 @@
 		0E8705EF25BD9E39006DD94E /* RecipeList+NetworkServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8705EE25BD9E39006DD94E /* RecipeList+NetworkServiceSpec.swift */; };
 		0E8705FA25BD9F68006DD94E /* Resource+RecipeListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8705F925BD9F68006DD94E /* Resource+RecipeListResponse.swift */; };
 		0E87060025BE0FCB006DD94E /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8705FF25BE0FCB006DD94E /* TestHelper.swift */; };
+		0E87060525BE1242006DD94E /* RecipesUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87060425BE1242006DD94E /* RecipesUseCaseType.swift */; };
+		0E87060925BE129A006DD94E /* Recipe+DomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87060825BE129A006DD94E /* Recipe+DomainModel.swift */; };
+		0E87061025BE165B006DD94E /* RecipeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87060F25BE165B006DD94E /* RecipeUseCase.swift */; };
+		0E87061A25BE1AA1006DD94E /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AB525BAD88A00FDB993 /* ApiConstants.swift */; };
 		0ED6DD5825BA182900502698 /* RecipeListFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5425BA182900502698 /* RecipeListFlowCoordinator.swift */; };
 		0ED6DD5925BA182900502698 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5525BA182900502698 /* ApplicationFlowCoordinator.swift */; };
 		0ED6DD5A25BA182900502698 /* FlowCoordinator+DependencyProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5625BA182900502698 /* FlowCoordinator+DependencyProviders.swift */; };
@@ -61,7 +64,7 @@
 		0E071AC225BAE12A00FDB993 /* LocalStubbedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStubbedDataService.swift; sourceTree = "<group>"; };
 		0E071AC625BAE18000FDB993 /* recipesSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipesSample.json; sourceTree = "<group>"; };
 		0E071AC925BAE1CB00FDB993 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
-		0E071ACE25BAE8D200FDB993 /* Recipe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+Model.swift"; sourceTree = "<group>"; };
+		0E071ACE25BAE8D200FDB993 /* Recipe+DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+DataModel.swift"; sourceTree = "<group>"; };
 		0E071AD125BAEEA800FDB993 /* ServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
 		0E1E381925B98D3100CE7BE5 /* RecipeBoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1E381C25B98D3100CE7BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +86,9 @@
 		0E8705EE25BD9E39006DD94E /* RecipeList+NetworkServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeList+NetworkServiceSpec.swift"; sourceTree = "<group>"; };
 		0E8705F925BD9F68006DD94E /* Resource+RecipeListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+RecipeListResponse.swift"; sourceTree = "<group>"; };
 		0E8705FF25BE0FCB006DD94E /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		0E87060425BE1242006DD94E /* RecipesUseCaseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesUseCaseType.swift; sourceTree = "<group>"; };
+		0E87060825BE129A006DD94E /* Recipe+DomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+DomainModel.swift"; sourceTree = "<group>"; };
+		0E87060F25BE165B006DD94E /* RecipeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeUseCase.swift; sourceTree = "<group>"; };
 		0ED6DD5425BA182900502698 /* RecipeListFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListFlowCoordinator.swift; sourceTree = "<group>"; };
 		0ED6DD5525BA182900502698 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
 		0ED6DD5625BA182900502698 /* FlowCoordinator+DependencyProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowCoordinator+DependencyProviders.swift"; sourceTree = "<group>"; };
@@ -113,7 +119,6 @@
 		0E071AAC25BAD7EB00FDB993 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0E071AB525BAD88A00FDB993 /* ApiConstants.swift */,
 				0E071AD125BAEEA800FDB993 /* ServicesProvider.swift */,
 				0E8705F825BD9EFB006DD94E /* Entities */,
 				0E071AAD25BAD7F300FDB993 /* Network */,
@@ -172,7 +177,9 @@
 		0E1E381B25B98D3100CE7BE5 /* RecipeBoss */ = {
 			isa = PBXGroup;
 			children = (
+				0E071AB525BAD88A00FDB993 /* ApiConstants.swift */,
 				0E1E383A25B9923A00CE7BE5 /* PresentationLayer */,
+				0E87060325BE1218006DD94E /* DomainLayer */,
 				0E071AAC25BAD7EB00FDB993 /* DataLayer */,
 				0E1E382A25B98D3200CE7BE5 /* Info.plist */,
 			);
@@ -278,10 +285,28 @@
 		0E8705F825BD9EFB006DD94E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				0E071ACE25BAE8D200FDB993 /* Recipe+Model.swift */,
+				0E071ACE25BAE8D200FDB993 /* Recipe+DataModel.swift */,
 				0E8705F925BD9F68006DD94E /* Resource+RecipeListResponse.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		0E87060325BE1218006DD94E /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0E87060C25BE15F6006DD94E /* Models */,
+				0E87060425BE1242006DD94E /* RecipesUseCaseType.swift */,
+				0E87060F25BE165B006DD94E /* RecipeUseCase.swift */,
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		0E87060C25BE15F6006DD94E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E87060825BE129A006DD94E /* Recipe+DomainModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		0ED6DD5325BA180000502698 /* FlowCoordinators */ = {
@@ -409,7 +434,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E87061A25BE1AA1006DD94E /* ApiConstants.swift in Sources */,
 				0ED6DD5925BA182900502698 /* ApplicationFlowCoordinator.swift in Sources */,
+				0E87061025BE165B006DD94E /* RecipeUseCase.swift in Sources */,
 				0E8705FA25BD9F68006DD94E /* Resource+RecipeListResponse.swift in Sources */,
 				0E1E384125B992C600CE7BE5 /* RecipeCollectionViewCell.swift in Sources */,
 				0E071ABD25BADA8500FDB993 /* Publisher+Extensions.swift in Sources */,
@@ -421,13 +448,14 @@
 				0ED6DD5F25BA19F600502698 /* RecipeListRouting.swift in Sources */,
 				0E071ACA25BAE1CB00FDB993 /* Scheduler.swift in Sources */,
 				0E1E382125B98D3100CE7BE5 /* RecipeListViewController.swift in Sources */,
-				0E071AB625BAD88A00FDB993 /* ApiConstants.swift in Sources */,
+				0E87060525BE1242006DD94E /* RecipesUseCaseType.swift in Sources */,
 				0E1E384A25B9936A00CE7BE5 /* UICollectionView+Common.swift in Sources */,
 				0E071AAF25BAD80A00FDB993 /* NetworkServiceType.swift in Sources */,
 				0E071AB925BAD8D300FDB993 /* NetworkService.swift in Sources */,
+				0E87060925BE129A006DD94E /* Recipe+DomainModel.swift in Sources */,
 				0E1E381D25B98D3100CE7BE5 /* AppDelegate.swift in Sources */,
 				0E071AD225BAEEA800FDB993 /* ServicesProvider.swift in Sources */,
-				0E071ACF25BAE8D200FDB993 /* Recipe+Model.swift in Sources */,
+				0E071ACF25BAE8D200FDB993 /* Recipe+DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

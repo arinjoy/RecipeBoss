@@ -1,0 +1,21 @@
+
+{
+  "recipes": [
+    {
+      "title": "Curtis Stone's tomato and bread salad with BBQ eggplant and capsicum",
+      "dynamicDescription": "For a crowd-pleasing salad, try this tasty combination of fresh tomato, crunchy bread and BBQ veggies. It’s topped with fresh basil and oregano for a finishing touch. ",
+      "recipeDetails": {
+        "amountLabel": "Serves",
+        "amountNumber": 8,
+        "cookingTime": "15m",
+        "cookTimeAsMinutes": 15,
+        "prepTimeAsMinutes": 15
+      },
+      "ingredients": [
+        {
+          "ingredient": "1 cup (250ml) extra virgin olive oil, divided"
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,12 +25,28 @@
 		0E1E384125B992C600CE7BE5 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E383F25B992C600CE7BE5 /* RecipeCollectionViewCell.swift */; };
 		0E1E384225B992C600CE7BE5 /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1E384025B992C600CE7BE5 /* RecipeCollectionViewCell.xib */; };
 		0E1E384A25B9936A00CE7BE5 /* UICollectionView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E384825B9936A00CE7BE5 /* UICollectionView+Common.swift */; };
+		0E8705A825BD841C006DD94E /* RecipeModel+DataMappingSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8705A725BD841C006DD94E /* RecipeModel+DataMappingSpecs.swift */; };
+		0E8705B225BD846F006DD94E /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 0E8705B125BD846F006DD94E /* Quick */; };
+		0E8705B725BD8498006DD94E /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 0E8705B625BD8498006DD94E /* Nimble */; };
+		0E8705BB25BD84D0006DD94E /* Bundle+JSONForResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8705BA25BD84D0006DD94E /* Bundle+JSONForResource.swift */; };
+		0E8705D925BD8C98006DD94E /* recipe_sample_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8705CB25BD85D4006DD94E /* recipe_sample_data.json */; };
+		0E8705DD25BD969B006DD94E /* incorrect_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8705DC25BD969B006DD94E /* incorrect_data.json */; };
 		0ED6DD5825BA182900502698 /* RecipeListFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5425BA182900502698 /* RecipeListFlowCoordinator.swift */; };
 		0ED6DD5925BA182900502698 /* ApplicationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5525BA182900502698 /* ApplicationFlowCoordinator.swift */; };
 		0ED6DD5A25BA182900502698 /* FlowCoordinator+DependencyProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5625BA182900502698 /* FlowCoordinator+DependencyProviders.swift */; };
 		0ED6DD5B25BA182900502698 /* ApplicationComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5725BA182900502698 /* ApplicationComponentsFactory.swift */; };
 		0ED6DD5F25BA19F600502698 /* RecipeListRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5E25BA19F600502698 /* RecipeListRouting.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E8705A025BD83FE006DD94E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E1E381125B98D3100CE7BE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E1E381825B98D3100CE7BE5;
+			remoteInfo = RecipeBoss;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E071AAE25BAD80A00FDB993 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
@@ -53,6 +69,12 @@
 		0E1E383F25B992C600CE7BE5 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E1E384025B992C600CE7BE5 /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E1E384825B9936A00CE7BE5 /* UICollectionView+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Common.swift"; sourceTree = "<group>"; };
+		0E87059B25BD83FE006DD94E /* RecipeBossTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeBossTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E87059F25BD83FE006DD94E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E8705A725BD841C006DD94E /* RecipeModel+DataMappingSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeModel+DataMappingSpecs.swift"; sourceTree = "<group>"; };
+		0E8705BA25BD84D0006DD94E /* Bundle+JSONForResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JSONForResource.swift"; sourceTree = "<group>"; };
+		0E8705CB25BD85D4006DD94E /* recipe_sample_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipe_sample_data.json; sourceTree = "<group>"; };
+		0E8705DC25BD969B006DD94E /* incorrect_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = incorrect_data.json; sourceTree = "<group>"; };
 		0ED6DD5425BA182900502698 /* RecipeListFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListFlowCoordinator.swift; sourceTree = "<group>"; };
 		0ED6DD5525BA182900502698 /* ApplicationFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFlowCoordinator.swift; sourceTree = "<group>"; };
 		0ED6DD5625BA182900502698 /* FlowCoordinator+DependencyProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowCoordinator+DependencyProviders.swift"; sourceTree = "<group>"; };
@@ -65,6 +87,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E87059825BD83FE006DD94E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8705B225BD846F006DD94E /* Quick in Frameworks */,
+				0E8705B725BD8498006DD94E /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0E1E381B25B98D3100CE7BE5 /* RecipeBoss */,
+				0E87059C25BD83FE006DD94E /* RecipeBossTests */,
 				0E1E381A25B98D3100CE7BE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0E1E381925B98D3100CE7BE5 /* RecipeBoss.app */,
+				0E87059B25BD83FE006DD94E /* RecipeBossTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +236,34 @@
 			path = "UI+Utils";
 			sourceTree = "<group>";
 		};
+		0E87059C25BD83FE006DD94E /* RecipeBossTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E8705BE25BD84DD006DD94E /* DataLayerTests */,
+				0E87059F25BD83FE006DD94E /* Info.plist */,
+			);
+			path = RecipeBossTests;
+			sourceTree = "<group>";
+		};
+		0E8705BE25BD84DD006DD94E /* DataLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E8705A725BD841C006DD94E /* RecipeModel+DataMappingSpecs.swift */,
+				0E8705C925BD85AF006DD94E /* TestingResources */,
+			);
+			path = DataLayerTests;
+			sourceTree = "<group>";
+		};
+		0E8705C925BD85AF006DD94E /* TestingResources */ = {
+			isa = PBXGroup;
+			children = (
+				0E8705CB25BD85D4006DD94E /* recipe_sample_data.json */,
+				0E8705BA25BD84D0006DD94E /* Bundle+JSONForResource.swift */,
+				0E8705DC25BD969B006DD94E /* incorrect_data.json */,
+			);
+			path = TestingResources;
+			sourceTree = "<group>";
+		};
 		0ED6DD5325BA180000502698 /* FlowCoordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,9 +291,33 @@
 			dependencies = (
 			);
 			name = RecipeBoss;
+			packageProductDependencies = (
+			);
 			productName = RecipeBoss;
 			productReference = 0E1E381925B98D3100CE7BE5 /* RecipeBoss.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0E87059A25BD83FE006DD94E /* RecipeBossTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8705A425BD83FE006DD94E /* Build configuration list for PBXNativeTarget "RecipeBossTests" */;
+			buildPhases = (
+				0E87059725BD83FE006DD94E /* Sources */,
+				0E87059825BD83FE006DD94E /* Frameworks */,
+				0E87059925BD83FE006DD94E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E8705A125BD83FE006DD94E /* PBXTargetDependency */,
+			);
+			name = RecipeBossTests;
+			packageProductDependencies = (
+				0E8705B125BD846F006DD94E /* Quick */,
+				0E8705B625BD8498006DD94E /* Nimble */,
+			);
+			productName = RecipeBossTests;
+			productReference = 0E87059B25BD83FE006DD94E /* RecipeBossTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -246,6 +331,10 @@
 					0E1E381825B98D3100CE7BE5 = {
 						CreatedOnToolsVersion = 12.3;
 					};
+					0E87059A25BD83FE006DD94E = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 0E1E381825B98D3100CE7BE5;
+					};
 				};
 			};
 			buildConfigurationList = 0E1E381425B98D3100CE7BE5 /* Build configuration list for PBXProject "RecipeBoss" */;
@@ -257,11 +346,16 @@
 				Base,
 			);
 			mainGroup = 0E1E381025B98D3100CE7BE5;
+			packageReferences = (
+				0E8705B025BD846F006DD94E /* XCRemoteSwiftPackageReference "Quick" */,
+				0E8705B525BD8498006DD94E /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 0E1E381A25B98D3100CE7BE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0E1E381825B98D3100CE7BE5 /* RecipeBoss */,
+				0E87059A25BD83FE006DD94E /* RecipeBossTests */,
 			);
 		};
 /* End PBXProject section */
@@ -276,6 +370,15 @@
 				0E1E382625B98D3200CE7BE5 /* Assets.xcassets in Resources */,
 				0E071AC725BAE18000FDB993 /* recipesSample.json in Resources */,
 				0E1E382425B98D3100CE7BE5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E87059925BD83FE006DD94E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8705D925BD8C98006DD94E /* recipe_sample_data.json in Resources */,
+				0E8705DD25BD969B006DD94E /* incorrect_data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +410,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0E87059725BD83FE006DD94E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8705A825BD841C006DD94E /* RecipeModel+DataMappingSpecs.swift in Sources */,
+				0E8705BB25BD84D0006DD94E /* Bundle+JSONForResource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E8705A125BD83FE006DD94E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E1E381825B98D3100CE7BE5 /* RecipeBoss */;
+			targetProxy = 0E8705A025BD83FE006DD94E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E1E382225B98D3100CE7BE5 /* Main.storyboard */ = {
@@ -483,6 +603,44 @@
 			};
 			name = Release;
 		};
+		0E8705A225BD83FE006DD94E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecipeBossTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arin.appy.RecipeBossTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecipeBoss.app/RecipeBoss";
+			};
+			name = Debug;
+		};
+		0E8705A325BD83FE006DD94E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecipeBossTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arin.appy.RecipeBossTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecipeBoss.app/RecipeBoss";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -504,7 +662,48 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		0E8705A425BD83FE006DD94E /* Build configuration list for PBXNativeTarget "RecipeBossTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8705A225BD83FE006DD94E /* Debug */,
+				0E8705A325BD83FE006DD94E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E8705B025BD846F006DD94E /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		0E8705B525BD8498006DD94E /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E8705B125BD846F006DD94E /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E8705B025BD846F006DD94E /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		0E8705B625BD8498006DD94E /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E8705B525BD8498006DD94E /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E1E381125B98D3100CE7BE5 /* Project object */;
 }

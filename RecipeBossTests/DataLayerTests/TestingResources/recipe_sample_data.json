@@ -1,0 +1,90 @@
+{
+  "recipes": [
+    {
+      "dynamicTitle": "Curtis Stone's tomato and bread salad with BBQ eggplant and capsicum",
+      "dynamicDescription": "For a crowd-pleasing salad, try this tasty combination of fresh tomato, crunchy bread and BBQ veggies. It’s topped with fresh basil and oregano for a finishing touch.",
+      "dynamicThumbnail": "/content/dam/coles/inspire-create/thumbnails/Tomato-and-bread-salad-480x288.jpg",
+      "dynamicThumbnailAlt": "Tomato, bread and eggplant salad served in a large plate topped with basil leaves with vinaigrette on the side",
+      "recipeDetails": {
+        "amountLabel": "Serves",
+        "amountNumber": 8,
+        "prepLabel": "Prep",
+        "prepTime": "15m",
+        "prepNote": "+ cooling time",
+        "cookingLabel": "Cooking",
+        "cookingTime": "15m",
+        "cookTimeAsMinutes": 15,
+        "prepTimeAsMinutes": 15
+      },
+      "ingredients": [
+        {
+          "ingredient": "1 cup (250ml) extra virgin olive oil, divided"
+        },
+        {
+          "ingredient": "4 cups (240g) 2cm-pieces day-old Coles Bakery Stone Baked by Laurent Pane Di Casa"
+        },
+        {
+          "ingredient": "4 Lebanese eggplants, halved lengthways"
+        },
+        {
+          "ingredient": "1 red capsicum, quartered, seeded"
+        },
+        {
+          "ingredient": "1 yellow capsicum, quartered, seeded"
+        }
+      ]
+    },
+    {
+      "dynamicTitle": "Pork, fennel and sage ragu with polenta",
+      "dynamicDescription": "Put your slow cooker to work and make this mouth-watering pork ragu. Served with fluffy polenta, it’s a guaranteed crowd-pleaser.  ",
+      "dynamicThumbnail": "/content/dam/coles/inspire-create/thumbnails/Pork-ragu-480x288.jpg",
+      "dynamicThumbnailAlt": "Pork ragu served on top of polenta with fennel and fried sage on top with bread on the side",
+      "recipeDetails": {
+        "amountLabel": "Serves",
+        "amountNumber": 8,
+        "prepLabel": "Prep",
+        "prepTime": "15m",
+        "prepNote": "+ cooling time",
+        "cookingLabel": "Cooking",
+        "cookingTime": "15m",
+        "cookTimeAsMinutes": 15,
+        "prepTimeAsMinutes": 15
+      },
+      "ingredients": [
+        {
+          "ingredient": "1.2kg Coles Australian Pork Slow Cook Scotch Roast, cut into 10cm pieces"
+        },
+        {
+          "ingredient": "1 tsp ground fennel or fennel seeds"
+        },
+        {
+          "ingredient": "6 pancetta slices, thinly sliced"
+        },
+        {
+          "ingredient": "200ml red wine or chicken stock"
+        },
+        {
+          "ingredient": "1 tbs olive oil"
+        },
+        {
+          "ingredient": "1 brown onion, thinly sliced"
+        },
+        {
+          "ingredient": "2 x 400g cans cherry tomatoes"
+        },
+        {
+          "ingredient": "1 carrot, peeled, finely chopped"
+        },
+        {
+          "ingredient": "1 small fennel, thinly sliced, fronds reserved"
+        },
+        {
+          "ingredient": "2 garlic cloves, crushed"
+        },
+        {
+          "ingredient": "1 tbs finely chopped sage"
+        }
+      ]
+    }
+  ]
+}

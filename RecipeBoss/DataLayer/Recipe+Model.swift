@@ -49,9 +49,9 @@ struct RecipeDetails: Decodable {
         case preparationTimeLabel = "prepLabel"
         case preparationTime = "prepTimeAsMinutes"
         case preparationTimeText = "prepTime"
-        case cookingTimeLabel = "cookingTimeLabel"
+        case cookingTimeLabel = "cookingLabel"
         case cookingTime = "cookTimeAsMinutes"
-        case cookingTimeText = "cookTime"
+        case cookingTimeText = "cookingTime"
     }
 }
 

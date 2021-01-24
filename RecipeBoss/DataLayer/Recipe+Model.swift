@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct RecipeList: Decodable {
+    let recipes: [Recipe]
+}
+
 struct Recipe: Decodable {
     
     let title: String
@@ -14,7 +18,7 @@ struct Recipe: Decodable {
     let thumbnailUrlPath: String
     let thumbnailAltText: String
     let details: RecipeDetails
-    let ingredients: [Ingredient]
+    let ingredients: [IngredientItem]
     
     private enum CodingKeys: String, CodingKey {
         case title = "dynamicTitle"
@@ -51,6 +55,7 @@ struct RecipeDetails: Decodable {
     }
 }
 
-struct Ingredient: Decodable {
-    let item: String
+struct IngredientItem: Decodable {
+    let ingredient: String
 }
+

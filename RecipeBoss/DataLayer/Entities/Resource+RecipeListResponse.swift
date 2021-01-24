@@ -11,6 +11,6 @@ extension Resource {
     
     static func listOfRecipes() -> Resource<RecipeList> {
     
-        return Resource<RecipeList>(url: ApiConstants.remoteRecipeListURL, parameters: [:])
+        return Resource<RecipeList>(url: URL(string: ApiConstants.remoteRecipeListURL)!, parameters: [:])
     }
 }

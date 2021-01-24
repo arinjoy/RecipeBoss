@@ -177,10 +177,10 @@
 		0E1E381B25B98D3100CE7BE5 /* RecipeBoss */ = {
 			isa = PBXGroup;
 			children = (
-				0E071AB525BAD88A00FDB993 /* ApiConstants.swift */,
 				0E1E383A25B9923A00CE7BE5 /* PresentationLayer */,
 				0E87060325BE1218006DD94E /* DomainLayer */,
 				0E071AAC25BAD7EB00FDB993 /* DataLayer */,
+				0E071AB525BAD88A00FDB993 /* ApiConstants.swift */,
 				0E1E382A25B98D3200CE7BE5 /* Info.plist */,
 			);
 			path = RecipeBoss;
@@ -254,9 +254,10 @@
 		0E87059C25BD83FE006DD94E /* RecipeBossTests */ = {
 			isa = PBXGroup;
 			children = (
+				0E87062525BE20E6006DD94E /* DomainLayerTests */,
 				0E8705BE25BD84DD006DD94E /* DataLayerTests */,
-				0E87059F25BD83FE006DD94E /* Info.plist */,
 				0E8705FF25BE0FCB006DD94E /* TestHelper.swift */,
+				0E87059F25BD83FE006DD94E /* Info.plist */,
 			);
 			path = RecipeBossTests;
 			sourceTree = "<group>";
@@ -307,6 +308,13 @@
 				0E87060825BE129A006DD94E /* Recipe+DomainModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0E87062525BE20E6006DD94E /* DomainLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DomainLayerTests;
 			sourceTree = "<group>";
 		};
 		0ED6DD5325BA180000502698 /* FlowCoordinators */ = {

@@ -14,5 +14,5 @@ struct ApiConstants {
     // Just chagge this line when ready to pickup remote source of JSON
     static let remoteRecipeListURL = "https://recipeboss.source.url.com.au/recipes"
     
-    static let recipeThumbnailUrlBasePath = "https://coles.com.au/"
+    static let recipeThumbnailUrlBasePath = "https://coles.com.au"
 }

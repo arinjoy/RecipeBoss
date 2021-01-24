@@ -9,5 +9,9 @@ import Foundation
 
 struct ApiConstants {
     
-    // TODO: define api base urls here
+    // TODO: define api based urls here
+    
+    // Just chagge this line when ready to pickup remote source of JSON
+    
+    static let remoteRecipeListURL = URL(string: "https://recipeboss.source.url.com.au/recipes")!
 }

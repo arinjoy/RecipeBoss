@@ -1,5 +1,5 @@
 //
-//  RecipeModel+DataMappingSpecs.swift
+//  RecipeModel+DataMappingSpec.swift
 //  RecipeBossTests
 //
 //  Created by Arinjoy Biswas on 24/1/21.

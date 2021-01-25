@@ -6,19 +6,23 @@
 //
 
 import Foundation
-import  Combine
+import Combine
+import UIKit.UIImage
 
 final class RecipeUseCase: RecipeUseCaseType {
 
     // MARK: - Depdendency
     
     private let networkService: NetworkServiceType
+    private let imageLoaderService: ImageLoaderServiceType
 
     // MARK: - Init
     
-    init(networkService: NetworkServiceType = ServicesProvider.defaultProvider().network) {
+    init(networkService: NetworkServiceType, imageLoaderService: ImageLoaderServiceType) {
         self.networkService = networkService
+        self.imageLoaderService = imageLoaderService
     }
+
     
     // MARK: - RecipeUseCase
     
@@ -36,6 +40,17 @@ final class RecipeUseCase: RecipeUseCaseType {
         })
         .subscribe(on: Scheduler.background)
         .receive(on: Scheduler.main)
+        .eraseToAnyPublisher()
+    }
+    
+    func loadImage(for url: URL) -> AnyPublisher<UIImage?, Never> {
+        return Deferred { return Just(url) }
+        .flatMap { [weak self] url -> AnyPublisher<UIImage?, Never> in
+            guard let self = self else { return .just(nil) }
+            return self.imageLoaderService.loadImage(from: url)
+        }
+        .receive(on: Scheduler.main)
+        .share()
         .eraseToAnyPublisher()
     }
     

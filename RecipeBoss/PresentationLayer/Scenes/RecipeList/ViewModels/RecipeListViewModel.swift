@@ -56,16 +56,18 @@ final class RecipeListViewModel: RecipeListViewModelType {
                 case .success([]):
                     self.recipeList = []
                     return .noResults
-                case .success(let recipes):
-                    //self.recipeList = recipes // TODO: Apply presentation layer transform here
+                    
+                case .success(let recipeModels):
+                    self.recipeList = self.recipeViewModels(from: recipeModels)
                     return .success(self.recipeList)
+                    
                 case .failure(let error):
                     self.recipeList = []
                     return .failure(error)
+                    
                 }
             }.eraseToAnyPublisher()
         
-        // TODO: handle some initial delay in loading
         let initialLoadingState: RecipeListViewModelOutput = .just(.loading)
         
         return Publishers.Merge(initialLoadingState, recipesResultsState)
@@ -102,7 +104,11 @@ final class RecipeListViewModel: RecipeListViewModelType {
             return RecipeViewModelTransformer.viewModel(
                 from: recipe,
                 imageLoader: { [unowned self] url in
-                    //self.useCase.loadImage(for: url)
+                    if let url = url {
+                        return self.useCase.loadImage(for: url)
+                    } else {
+                        return AnyPublisher.empty()
+                    }
                 })
         }
         .compactMap { $0 }

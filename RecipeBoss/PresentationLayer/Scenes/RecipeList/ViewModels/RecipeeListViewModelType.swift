@@ -34,7 +34,6 @@ protocol RecipeListViewModelType {
 }
 
 enum RecipeListState {
-    case idle
     case loading
     case success([RecipeModel])
     case noResults

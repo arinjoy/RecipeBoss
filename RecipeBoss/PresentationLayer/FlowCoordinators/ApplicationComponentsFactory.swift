@@ -14,6 +14,10 @@ final class ApplicationComponentsFactory {
     
     private lazy var useCase: RecipeUseCaseType = {
         return RecipeUseCase(
+            
+            /// TODO: Here is the glue. Use `defaultProvider` when real network loadin is needed
+            /// For now leaded locally from a JSON file
+            
             networkService: ServicesProvider.localStubbedProvider().network
         )
     }()

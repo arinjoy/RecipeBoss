@@ -34,11 +34,55 @@ final class RecipeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUI()
+        
         // Reactive binding to view model to listen for loading, success & failure events
         bind(to: viewModel)
     }
     
     // MARK: - Private Helpers
+    
+    private func configureUI() {
+
+        collectionView.registerNib(cellClass: RecipeCollectionViewCell.self)
+        collectionView.collectionViewLayout = customRecipeGridLayout()
+        collectionView.dataSource = dataSource
+        
+        // TODO:
+        // collectionView.delegate = self
+    }
+    
+    private func customRecipeGridLayout() -> UICollectionViewLayout {
+
+        // TODO: improve it or customise as much as needed based on `layoutEnvironment.traitCollection`
+
+        return UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+
+            let isCompact = layoutEnvironment.traitCollection.horizontalSizeClass == .compact
+            let itemCount = isCompact ? 2 : 4
+            let itemHeight = isCompact ?
+                UIScreen.main.bounds.width : UIScreen.main.bounds.width / CGFloat(itemCount) + 60
+            let padding: CGFloat = isCompact ? 16 : 24
+            
+            let size = NSCollectionLayoutSize(
+                widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
+                heightDimension: NSCollectionLayoutDimension.absolute(itemHeight))
+            let item = NSCollectionLayoutItem(layoutSize: size)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: size,
+                                                           subitem: item,
+                                                           count: itemCount)
+            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(padding)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets(top: padding,
+                                                            leading: padding,
+                                                            bottom: padding,
+                                                            trailing: padding)
+            section.interGroupSpacing = padding
+            return section
+        })
+    }
+
     
     private func bind(to viewModel: RecipeListViewModelType) {
         
@@ -68,9 +112,9 @@ final class RecipeListViewController: UIViewController {
         case .failure(let error):
             // TODO:
             break
-        case .success(let photos):
+        case .success(let recipes):
             loadingView.isHidden = true
-            update(with: photos, animate: true)
+            update(with: recipes, animate: true)
         break
         }
     }
@@ -88,20 +132,19 @@ extension RecipeListViewController {
         return UICollectionViewDiffableDataSource(
             collectionView: collectionView,
             cellProvider: { collectionView, indexPath, recipeModel in
-                // TODO:
-                // let cell = collectionView.dequeueReusableCell(withClass: CustomCell.self, forIndexPath: indexPath)
-                // cell.configure(with: recipeModel)
-                return UICollectionViewCell()
+                let cell = collectionView.dequeueReusableCell(withClass: RecipeCollectionViewCell.self,
+                                                               forIndexPath: indexPath)
+                cell.configure(withPresentationItem: recipeModel)
+                // TODO: cell.accessibility
+                return  cell
             }
         )
     }
 
-    func update(with photos: [RecipeModel], animate: Bool = false) {
+    func update(with recipes: [RecipeModel], animate: Bool = false) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, RecipeModel>()
         snapshot.appendSections(Section.allCases)
-        snapshot.appendItems(photos, toSection: .recipes)
+        snapshot.appendItems(recipes, toSection: .recipes)
         dataSource.apply(snapshot, animatingDifferences: animate)
     }
 }
-
-

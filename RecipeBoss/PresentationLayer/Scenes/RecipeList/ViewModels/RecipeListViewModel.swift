@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit.UIImage
 
 final class RecipeListViewModel: RecipeListViewModelType {
 
@@ -14,10 +15,13 @@ final class RecipeListViewModel: RecipeListViewModelType {
     // MARK: - Private Properties
 
     /// The latest list of recipes being shown as results of the latest load operation
-    private var recipeList: [RecipeModel] = []
+    private var recipeList: [RecipeViewModel] = []
 
     /// The sink for the disposables
     private var cancellables: [AnyCancellable] = []
+    
+    private var imageLoadingQueue = OperationQueue()
+    private var imageLoadingOperations: [IndexPath: ImageLoadOperation] = [:]
     
     
     // MARK: - Dependency
@@ -53,7 +57,7 @@ final class RecipeListViewModel: RecipeListViewModelType {
                     self.recipeList = []
                     return .noResults
                 case .success(let recipes):
-                    self.recipeList = recipes // TODO: Apply presentation layer transform here
+                    //self.recipeList = recipes // TODO: Apply presentation layer transform here
                     return .success(self.recipeList)
                 case .failure(let error):
                     self.recipeList = []
@@ -67,6 +71,40 @@ final class RecipeListViewModel: RecipeListViewModelType {
         return Publishers.Merge(initialLoadingState, recipesResultsState)
             .removeDuplicates()
             .eraseToAnyPublisher()
+    }
+    
+    var imageStore: [IndexPath : UIImage?] = [:]
+    
+    func addImageLoadOperation(atIndexPath indexPath: IndexPath, updateCellClosure: ((UIImage?) -> Void)?) {
+        guard imageLoadingOperations[indexPath] == nil, recipeList.count > indexPath.row
+        else { return }
 
+        guard let imageURL = recipeList[indexPath.row].imageURL else { return }
+        let imageLoader = ImageLoadOperation(withUrl: imageURL)
+        imageLoader.completionHandler = updateCellClosure
+        imageLoadingQueue.addOperation(imageLoader)
+        imageLoadingOperations[indexPath] = imageLoader
+    }
+    
+    func removeImageLoadOperation(atIndexPath indexPath: IndexPath) {
+        if let imageLoader = imageLoadingOperations[indexPath] {
+            imageLoader.cancel()
+            imageLoadingOperations.removeValue(forKey: indexPath)
+        }
+    }
+    
+    // MARK: - Private Helpers
+    
+    // MARK: - Private Helpers
+
+    private func recipeViewModels(from recipes: [RecipeModel]) -> [RecipeViewModel] {
+        return recipes.map { recipe in
+            return RecipeViewModelTransformer.viewModel(
+                from: recipe,
+                imageLoader: { [unowned self] url in
+                    //self.useCase.loadImage(for: url)
+                })
+        }
+        .compactMap { $0 }
     }
 }

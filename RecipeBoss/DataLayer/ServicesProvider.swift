@@ -14,8 +14,12 @@ class ServicesProvider {
     /// The underlying network service to load HTTP network based data
     let network: NetworkServiceType
     
-    init(network: NetworkServiceType) {
+    /// The underlying image service to load images from HTTP or from saved cache
+    let imageLoader: ImageLoaderServiceType
+    
+    init(network: NetworkServiceType, imageLoader: ImageLoaderServiceType) {
         self.network = network
+        self.imageLoader = imageLoader
     }
 
     /// The deafult provider used for production code to fetch from remote
@@ -30,14 +34,14 @@ class ServicesProvider {
         
         let network = NetworkService(with: sessionConfig)
         
-        return ServicesProvider(network: network)
+        return ServicesProvider(network: network, imageLoader: ImageLoaderService())
     }
     
     /// The helping provider to fetch locally from stub JSON file
     static func localStubbedProvider() -> ServicesProvider {
         // Slightly modified version with more recent dates used for testing
         let localStubbedNetwork = LocalStubbedDataService(withLocalFile: "recipesSample")
-        return ServicesProvider(network: localStubbedNetwork)
+        return ServicesProvider(network: localStubbedNetwork, imageLoader: ImageLoaderService())
     }
 }
 

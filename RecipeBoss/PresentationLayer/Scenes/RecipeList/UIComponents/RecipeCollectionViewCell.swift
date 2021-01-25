@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, ReusableView {
     
@@ -16,34 +17,57 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     @IBOutlet private var subtitleLabel: UILabel!
     @IBOutlet private var containerView: UIView!
     
-    
-    // MARK: - Configuration
-    
-    // TODO: with `RecipePresentationItem` type which is transformed at view layer for thwe UI need
-    func configure(withPresentationItem item: RecipeModel) {
-        
-        // TODO: load from URL and bind here
-        //imageView.image =
-        
-        titleLabel.text = "RECIPE"
-        subtitleLabel.text = item.title
-        
-        containerView.setNeedsLayout()
-        containerView.layoutIfNeeded()
-    }
-    
+    private var imageCancellable: AnyCancellable?
     
     // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        imageView.image = UIImage(named: "recipe_placeholder_icon")
+        
         applyStyle()
     }
+    
+    
+    // MARK: - Configuration
+    
+    // TODO: with `RecipePresentationItem` type which is transformed at view layer for thwe UI need
+    func configure(withViewModel viewModel: RecipeViewModel) {
+    
+        
+        titleLabel.text = "RECIPE" // FIXED value for now
+        subtitleLabel.text = viewModel.title
+        
+
+        imageCancellable = viewModel.thumbImage
+            .receive(on: Scheduler.main)
+            .sink { [unowned self] image in
+                self.showImage(image: image)
+            }
+    }
+    
+    func showImage(image: UIImage?) {
+        cancelMainImageLoading()
+
+        UIView.transition(
+            with: imageView,
+            duration: 0.3,
+            options: [.curveEaseOut, .transitionCrossDissolve],
+            animations: {
+                self.imageView.image = image
+            })
+    }
+    
     
     // MARK: - Private Helpers
     
     private func applyStyle() {
         
+    }
+    
+    private func cancelMainImageLoading() {
+        imageView.image = nil
+        imageCancellable?.cancel()
     }
 }

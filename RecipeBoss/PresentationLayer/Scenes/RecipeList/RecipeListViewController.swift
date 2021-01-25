@@ -19,14 +19,14 @@ final class RecipeListViewController: UIViewController {
     
     // MARK: - Private properties
     
-    private lazy var dataSource: UICollectionViewDiffableDataSource<Section, RecipeModel> = {
+    private lazy var dataSource: UICollectionViewDiffableDataSource<Section, RecipeViewModel> = {
         return makeDataSource()
     }()
     
     private var cancellables: [AnyCancellable] = []
     
     private let appear = PassthroughSubject<Void, Never>()
-    private let selection = PassthroughSubject<RecipeModel, Never>()
+    private let selection = PassthroughSubject<RecipeViewModel, Never>()
 
     
     // MARK: - Lifecycle
@@ -121,6 +121,33 @@ final class RecipeListViewController: UIViewController {
     }
 }
 
+extension RecipeListViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let snapshot = dataSource.snapshot()
+        // Send reactive signal as selection is made and pass the recipe view model being selected
+        selection.send(snapshot.itemIdentifiers[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? RecipeCollectionViewCell else { return }
+
+        // Check if image store has this image loaded already, then update using the same
+        if let image = viewModel.imageStore[indexPath] {
+            // cell.showImage(image: image)
+        } else {
+            // Else, add image loading operation and attach the image update closure
+            let updateCellClosure: (UIImage?) -> Void = { [weak self] image in
+                // cell.showImage(image: image)
+                self?.viewModel.imageStore[indexPath] = image
+                self?.viewModel.removeImageLoadOperation(atIndexPath: indexPath)
+            }
+            viewModel.addImageLoadOperation(atIndexPath: indexPath,
+                                            updateCellClosure: updateCellClosure)
+        }
+    }
+}
+
 // MARK: - Diffable DataSource & updates
 
 extension RecipeListViewController {
@@ -129,21 +156,21 @@ extension RecipeListViewController {
         case recipes
     }
 
-    func makeDataSource() -> UICollectionViewDiffableDataSource<Section, RecipeModel> {
+    func makeDataSource() -> UICollectionViewDiffableDataSource<Section, RecipeViewModel> {
         return UICollectionViewDiffableDataSource(
             collectionView: collectionView,
-            cellProvider: { collectionView, indexPath, recipeModel in
+            cellProvider: { collectionView, indexPath, recipeViewModel in
                 let cell = collectionView.dequeueReusableCell(withClass: RecipeCollectionViewCell.self,
                                                                forIndexPath: indexPath)
-                cell.configure(withPresentationItem: recipeModel)
+                cell.configure(withViewModel: recipeViewModel)
                 // TODO: cell.accessibility
                 return  cell
             }
         )
     }
 
-    func update(with recipes: [RecipeModel], animate: Bool = false) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, RecipeModel>()
+    func update(with recipes: [RecipeViewModel], animate: Bool = false) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, RecipeViewModel>()
         snapshot.appendSections(Section.allCases)
         snapshot.appendItems(recipes, toSection: .recipes)
         dataSource.apply(snapshot, animatingDifferences: animate)

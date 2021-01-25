@@ -21,5 +21,5 @@ protocol RecipeListFlowCoordinatorDependencyProvider: class {
     func recipeListController(router: RecipeListRouting) -> UIViewController
     
     /// Creates UIViewController to show all the details of a recipe in a different view controller
-    func recipeDetailsController(_ viewModel: String) -> UIViewController
+    func recipeDetailsController(_ viewModel: RecipeViewModel) -> UIViewController
 }

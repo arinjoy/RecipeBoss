@@ -24,7 +24,7 @@ final class NetworkService: NetworkServiceType {
         }
         
         let jsonDecoder = JSONDecoder()
-        // TODO: inject custom date decoding strategy if needed
+        // Note: inject custom date decoding strategy if needed
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .mapError { error in

@@ -10,7 +10,6 @@ import Foundation
 protocol RecipeListRouting: AnyObject {
     
     /// Presents the details screen of a recipe
-    // TODO: Replace type with custom
-    func showDetails(forRecipe recipe: String)
+    func showDetails(forRecipe recipeViewModel: RecipeViewModel)
 }
 

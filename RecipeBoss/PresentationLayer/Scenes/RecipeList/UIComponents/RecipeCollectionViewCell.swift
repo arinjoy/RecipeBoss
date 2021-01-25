@@ -32,7 +32,6 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     
     // MARK: - Configuration
     
-    // TODO: with `RecipePresentationItem` type which is transformed at view layer for thwe UI need
     func configure(withViewModel viewModel: RecipeViewModel) {
     
         

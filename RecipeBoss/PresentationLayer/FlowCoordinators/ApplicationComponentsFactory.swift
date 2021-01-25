@@ -58,9 +58,10 @@ extension ApplicationComponentsFactory: RecipeListFlowCoordinatorDependencyProvi
         return recipeListVC
     }
     
-    func recipeDetailsController(_ viewModel: String) -> UIViewController {
+    func recipeDetailsController(_ viewModel: RecipeViewModel) -> UIViewController {
         
-        // TODO: do when needed
+        // TODO: Do when needed
+        // This is placeholder code for going in to details view of the recipe after tapping
         return UIViewController()
     }
 }

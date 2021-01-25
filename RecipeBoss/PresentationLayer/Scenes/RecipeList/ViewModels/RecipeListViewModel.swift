@@ -46,7 +46,7 @@ final class RecipeListViewModel: RecipeListViewModelType {
         
         input.selection
             .sink(receiveValue: { [weak self] recipeViewModel in
-               // TODO: self?.router?.showDetails(forRecipe: recipeViewModel)
+                self?.router?.showDetails(forRecipe: recipeViewModel)
             })
             .store(in: &cancellables)
         
@@ -95,7 +95,6 @@ final class RecipeListViewModel: RecipeListViewModelType {
         }
     }
     
-    // MARK: - Private Helpers
     
     // MARK: - Private Helpers
 

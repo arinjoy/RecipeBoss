@@ -27,6 +27,9 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         
         titleLabel.text = "RECIPE"
         subtitleLabel.text = item.title
+        
+        containerView.setNeedsLayout()
+        containerView.layoutIfNeeded()
     }
     
     

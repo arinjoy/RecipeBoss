@@ -22,42 +22,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="314" height="217"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_recipe_image" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-ts-04H">
-                                <rect key="frame" x="0.0" y="0.0" width="314" height="152"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="80" id="Jrw-Yu-9lT"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="314" height="108.5"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EnJ-Hr-PTG">
-                                <rect key="frame" x="0.0" y="168" width="221" height="44.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gpE-C8-EzT">
+                                <rect key="frame" x="0.0" y="118.5" width="314" height="42"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Recipe &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="udq-LE-gJr" userLabel="Title Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="221" height="19.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; RECIPE &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKv-fX-q7Q" userLabel="Title Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Recipe Name &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fbt-QS-z8u" userLabel="Subtitle Label">
-                                        <rect key="frame" x="0.0" y="27.5" width="221" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Rcipe Name &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALX-dL-j0X" userLabel="Subtitle Label">
+                                        <rect key="frame" x="0.0" y="25" width="120" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nkr-ts-04H" firstAttribute="height" secondItem="O97-lO-eu9" secondAttribute="height" multiplier="0.7" id="4vm-aD-R8f"/>
-                            <constraint firstItem="EnJ-Hr-PTG" firstAttribute="leading" secondItem="O97-lO-eu9" secondAttribute="leading" id="5LC-Dt-ori"/>
+                            <constraint firstItem="Nkr-ts-04H" firstAttribute="height" secondItem="O97-lO-eu9" secondAttribute="height" multiplier="0.5" id="4vm-aD-R8f"/>
+                            <constraint firstItem="gpE-C8-EzT" firstAttribute="leading" secondItem="O97-lO-eu9" secondAttribute="leading" id="EI7-3l-8Tf"/>
                             <constraint firstItem="Nkr-ts-04H" firstAttribute="leading" secondItem="O97-lO-eu9" secondAttribute="leading" id="EyA-8u-AYC"/>
+                            <constraint firstAttribute="trailing" secondItem="gpE-C8-EzT" secondAttribute="trailing" id="LQs-cd-bN0"/>
                             <constraint firstAttribute="trailing" secondItem="Nkr-ts-04H" secondAttribute="trailing" id="Xac-KC-HcR"/>
                             <constraint firstItem="Nkr-ts-04H" firstAttribute="top" secondItem="O97-lO-eu9" secondAttribute="top" id="bRe-Zq-oYA"/>
-                            <constraint firstItem="EnJ-Hr-PTG" firstAttribute="top" secondItem="Nkr-ts-04H" secondAttribute="bottom" constant="16" id="fNC-Ix-d2F"/>
-                            <constraint firstAttribute="bottom" secondItem="EnJ-Hr-PTG" secondAttribute="bottom" constant="20" id="iJM-Eb-axJ"/>
-                            <constraint firstAttribute="trailing" secondItem="EnJ-Hr-PTG" secondAttribute="trailing" id="jRW-ty-etP"/>
+                            <constraint firstItem="gpE-C8-EzT" firstAttribute="top" secondItem="Nkr-ts-04H" secondAttribute="bottom" constant="10" id="bZp-f9-BNZ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -73,8 +66,8 @@
             <connections>
                 <outlet property="containerView" destination="O97-lO-eu9" id="CSE-a8-Gfv"/>
                 <outlet property="imageView" destination="Nkr-ts-04H" id="I5l-Nv-Gfm"/>
-                <outlet property="subtitleLabel" destination="Fbt-QS-z8u" id="lXU-vc-RUa"/>
-                <outlet property="titleLabel" destination="udq-LE-gJr" id="acy-GJ-Dee"/>
+                <outlet property="subtitleLabel" destination="ALX-dL-j0X" id="aXh-Sz-aIQ"/>
+                <outlet property="titleLabel" destination="iKv-fX-q7Q" id="SDD-YJ-su4"/>
             </connections>
             <point key="canvasLocation" x="4.3478260869565224" y="107.47767857142857"/>
         </collectionViewCell>

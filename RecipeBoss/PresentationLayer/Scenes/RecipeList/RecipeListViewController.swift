@@ -59,9 +59,10 @@ final class RecipeListViewController: UIViewController {
         return UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
 
             let isCompact = layoutEnvironment.traitCollection.horizontalSizeClass == .compact
-            let itemCount = isCompact ? 2 : 4
-            let itemHeight = isCompact ?
-                UIScreen.main.bounds.width : UIScreen.main.bounds.width / CGFloat(itemCount) + 60
+            let itemCount = isCompact ? 2 : 6
+//            let itemHeight = isCompact ?
+//                UIScreen.main.bounds.width : UIScreen.main.bounds.width / CGFloat(itemCount) + 60
+            let itemHeight = UIScreen.main.bounds.width / CGFloat(itemCount)
             let padding: CGFloat = isCompact ? 16 : 24
             
             let size = NSCollectionLayoutSize(

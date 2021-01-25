@@ -18,3 +18,14 @@ struct RecipeModel {
     let cookingTimeInfo: (label: String, duration: Int, text: String)
     let ingredients: [String]
 }
+
+extension RecipeModel: Hashable {
+
+    static func == (lhs: RecipeModel, rhs: RecipeModel) -> Bool {
+        return lhs.title == rhs.title && lhs.description == rhs.description
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+    }
+}

@@ -210,7 +210,6 @@
 			children = (
 				0E1E383D25B9928700CE7BE5 /* RecipeList */,
 				0E1E384525B992FB00CE7BE5 /* Shared */,
-				0E1E382025B98D3100CE7BE5 /* RecipeListViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -229,6 +228,7 @@
 				0E87062C25BEBD1F006DD94E /* ViewModels */,
 				0E1E383E25B9929500CE7BE5 /* UIComponents */,
 				0ED6DD5E25BA19F600502698 /* RecipeListRouting.swift */,
+				0E1E382025B98D3100CE7BE5 /* RecipeListViewController.swift */,
 			);
 			path = RecipeList;
 			sourceTree = "<group>";

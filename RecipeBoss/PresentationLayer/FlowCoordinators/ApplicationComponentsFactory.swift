@@ -12,8 +12,17 @@ import UIKit
 /// establishing dependencies between them.
 final class ApplicationComponentsFactory {
     
-    // TODO: when lower level is done
-    // Add useCase
+    private lazy var useCase: RecipeUseCaseType = {
+        return RecipeUseCase(
+            networkService: ServicesProvider.localStubbedProvider().network
+        )
+    }()
+
+    private let servicesProvider: ServicesProvider
+
+    init(servicesProvider: ServicesProvider = ServicesProvider.defaultProvider()) {
+        self.servicesProvider = servicesProvider
+    }
 }
 
 extension ApplicationComponentsFactory: ApplicationFlowCoordinatorDependencyProvider {
@@ -37,11 +46,10 @@ extension ApplicationComponentsFactory: RecipeListFlowCoordinatorDependencyProvi
             fatalError("`RecipeListViewController` could not be constructed out of main storyboard")
         }
 
-        // TODO:
-        // let recipeListVM = RecipeListViewModel(router: router)
+        let recipeListVM = RecipeListViewModel(useCase: useCase, router: router)
         
         // TODO: Improve this VM injection logic differently if possible
-        // recipeListVC.viewModel = recipeListVM
+        recipeListVC.viewModel = recipeListVM
         return recipeListVC
     }
     

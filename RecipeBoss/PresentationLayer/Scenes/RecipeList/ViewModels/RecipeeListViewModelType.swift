@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct RecipeeListViewModelInput {
+struct RecipeListViewModelInput {
 
     /// Called when a screen becomes visible
     let appear: AnyPublisher<Void, Never>
@@ -25,11 +25,11 @@ struct RecipeeListViewModelInput {
     }
 }
 
-typealias RecipeeListViewModelOutput = AnyPublisher<RecipeListState, Never>
+typealias RecipeListViewModelOutput = AnyPublisher<RecipeListState, Never>
 
 protocol RecipeListViewModelType {
     
-    func transform(input: RecipeeListViewModelInput) -> RecipeeListViewModelOutput
+    func transform(input: RecipeListViewModelInput) -> RecipeListViewModelOutput
 
 }
 

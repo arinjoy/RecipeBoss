@@ -22,13 +22,20 @@ final class RecipeListViewModel: RecipeListViewModelType {
     
     // MARK: - Dependency
     
-    private let useCase: RecipeUseCase
+    private let useCase: RecipeUseCaseType
     private weak var router: RecipeListRouting?
+    
+    init(useCase: RecipeUseCaseType,
+         router: RecipeListRouting?
+    ) {
+        self.useCase = useCase
+        self.router = router
+    }
     
     
     // MARK: - RecipeListViewModelType
     
-    func transform(input: RecipeeListViewModelInput) -> RecipeeListViewModelOutput {
+    func transform(input: RecipeListViewModelInput) -> RecipeListViewModelOutput {
         
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
@@ -55,7 +62,7 @@ final class RecipeListViewModel: RecipeListViewModelType {
             }.eraseToAnyPublisher()
         
         // TODO: handle some initial delay in loading
-        let initialLoadingState: RecipeeListViewModelOutput = .just(.loading)
+        let initialLoadingState: RecipeListViewModelOutput = .just(.loading)
         
         return Publishers.Merge(initialLoadingState, recipesResultsState)
             .removeDuplicates()

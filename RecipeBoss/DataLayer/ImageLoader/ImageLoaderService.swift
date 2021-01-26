@@ -17,7 +17,6 @@ final class ImageLoaderService: ImageLoaderServiceType {
 
         // If image exists in cache just return it
         if let image = cache.image(for: url) {
-            print("Loaded from Cache: \(url)")
             return .just(image)
         }
 
@@ -34,7 +33,6 @@ final class ImageLoaderService: ImageLoaderServiceType {
                 guard let image = image else { return }
                 self.cache.insertImage(image, for: url)
             })
-            .print("Loaded from Network: \(url)")
             .eraseToAnyPublisher()
     }
 }

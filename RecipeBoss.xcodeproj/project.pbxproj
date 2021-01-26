@@ -231,11 +231,11 @@
 		0E1E383A25B9923A00CE7BE5 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0E1E382725B98D3200CE7BE5 /* LaunchScreen.storyboard */,
+				0E1E382225B98D3100CE7BE5 /* Main.storyboard */,
 				0E1E381C25B98D3100CE7BE5 /* AppDelegate.swift */,
 				0ED6DD5325BA180000502698 /* FlowCoordinators */,
 				0E1E383B25B9925B00CE7BE5 /* Scenes */,
-				0E1E382225B98D3100CE7BE5 /* Main.storyboard */,
-				0E1E382725B98D3200CE7BE5 /* LaunchScreen.storyboard */,
 				0E1E383C25B9926D00CE7BE5 /* SupportingFiles */,
 			);
 			path = PresentationLayer;

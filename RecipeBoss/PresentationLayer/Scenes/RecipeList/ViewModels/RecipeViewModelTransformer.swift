@@ -28,7 +28,5 @@ struct RecipeViewModelTransformer {
             preparationTimeInfo: model.preparationTimeInfo,
             cookingTimeInfo: model.cookingTimeInfo,
             ingredients: model.ingredients)
-        
-        return nil
     }
 }

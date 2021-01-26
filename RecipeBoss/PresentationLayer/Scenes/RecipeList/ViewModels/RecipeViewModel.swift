@@ -22,6 +22,8 @@ struct RecipeViewModel {
     let preparationTimeInfo: (label: String, duration: Int, text: String)
     let cookingTimeInfo: (label: String, duration: Int, text: String)
     let ingredients: [String]
+    
+    var accessibility: AccessibilityConfiguration?
 }
 
 /// Used for `NSDiffableDataSource`

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E00FCA725BEEA5D00492857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E00FCA625BEEA5D00492857 /* Assets.xcassets */; };
+		0E00FCA725BEEA5D00492857 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E00FCA625BEEA5D00492857 /* Image.xcassets */; };
 		0E00FCAE25BF725B00492857 /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00FCAA25BF725B00492857 /* ImageLoaderService.swift */; };
 		0E00FCAF25BF725B00492857 /* ImageLoaderServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00FCAB25BF725B00492857 /* ImageLoaderServiceType.swift */; };
 		0E00FCB025BF725B00492857 /* ImageLoadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00FCAC25BF725B00492857 /* ImageLoadOperation.swift */; };
 		0E00FCB125BF725B00492857 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00FCAD25BF725B00492857 /* ImageCache.swift */; };
 		0E00FCBC25BF827900492857 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00FCBB25BF827900492857 /* RecipeViewModel.swift */; };
 		0E00FCC025BF870400492857 /* RecipeViewModelTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00FCBF25BF870400492857 /* RecipeViewModelTransformer.swift */; };
+		0E00FCCF25BF965300492857 /* UIAccessibility+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E00FCCE25BF965300492857 /* UIAccessibility+Helpers.swift */; };
 		0E071AAF25BAD80A00FDB993 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AAE25BAD80A00FDB993 /* NetworkServiceType.swift */; };
 		0E071AB325BAD82700FDB993 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AB225BAD82700FDB993 /* Resource.swift */; };
 		0E071AB925BAD8D300FDB993 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E071AB825BAD8D300FDB993 /* NetworkService.swift */; };
@@ -66,13 +67,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E00FCA625BEEA5D00492857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E00FCA625BEEA5D00492857 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Image.xcassets; path = ../Image.xcassets; sourceTree = "<group>"; };
 		0E00FCAA25BF725B00492857 /* ImageLoaderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		0E00FCAB25BF725B00492857 /* ImageLoaderServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoaderServiceType.swift; sourceTree = "<group>"; };
 		0E00FCAC25BF725B00492857 /* ImageLoadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoadOperation.swift; sourceTree = "<group>"; };
 		0E00FCAD25BF725B00492857 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		0E00FCBB25BF827900492857 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		0E00FCBF25BF870400492857 /* RecipeViewModelTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTransformer.swift; sourceTree = "<group>"; };
+		0E00FCCE25BF965300492857 /* UIAccessibility+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+Helpers.swift"; sourceTree = "<group>"; };
 		0E071AAE25BAD80A00FDB993 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
 		0E071AB225BAD82700FDB993 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		0E071AB525BAD88A00FDB993 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 				0E00FCAD25BF725B00492857 /* ImageCache.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		0E00FCCD25BF962C00492857 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				0E00FCCE25BF965300492857 /* UIAccessibility+Helpers.swift */,
+			);
+			path = Accessibility;
 			sourceTree = "<group>";
 		};
 		0E071AAC25BAD7EB00FDB993 /* DataLayer */ = {
@@ -227,7 +237,6 @@
 				0E1E382225B98D3100CE7BE5 /* Main.storyboard */,
 				0E1E382725B98D3200CE7BE5 /* LaunchScreen.storyboard */,
 				0E1E383C25B9926D00CE7BE5 /* SupportingFiles */,
-				0E00FCA625BEEA5D00492857 /* Assets.xcassets */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 		0E1E383C25B9926D00CE7BE5 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0E00FCA625BEEA5D00492857 /* Image.xcassets */,
 				0E1E382525B98D3200CE7BE5 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
@@ -272,6 +282,7 @@
 		0E1E384525B992FB00CE7BE5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				0E00FCCD25BF962C00492857 /* Accessibility */,
 				0E1E384625B9930A00CE7BE5 /* UI+Utils */,
 			);
 			path = Shared;
@@ -468,7 +479,7 @@
 				0E1E382925B98D3200CE7BE5 /* LaunchScreen.storyboard in Resources */,
 				0E1E382625B98D3200CE7BE5 /* Assets.xcassets in Resources */,
 				0E071AC725BAE18000FDB993 /* recipesSample.json in Resources */,
-				0E00FCA725BEEA5D00492857 /* Assets.xcassets in Resources */,
+				0E00FCA725BEEA5D00492857 /* Image.xcassets in Resources */,
 				0E1E382425B98D3100CE7BE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +526,7 @@
 				0E87060925BE129A006DD94E /* Recipe+DomainModel.swift in Sources */,
 				0E87063425BEBE96006DD94E /* RecipeListViewModel.swift in Sources */,
 				0E00FCBC25BF827900492857 /* RecipeViewModel.swift in Sources */,
+				0E00FCCF25BF965300492857 /* UIAccessibility+Helpers.swift in Sources */,
 				0E1E381D25B98D3100CE7BE5 /* AppDelegate.swift in Sources */,
 				0E071AD225BAEEA800FDB993 /* ServicesProvider.swift in Sources */,
 				0E00FCB125BF725B00492857 /* ImageCache.swift in Sources */,

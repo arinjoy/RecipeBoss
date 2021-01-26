@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="961" height="1209"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uRi-OK-QpQ">
-                                <rect key="frame" x="0.0" y="0.0" width="961" height="708.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="961" height="748.66666666666663"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;  A big long recipe name that appear as heading&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZh-OS-R4P" userLabel="Heading Title Label">
                                         <rect key="frame" x="0.0" y="0.0" width="961" height="24"/>
@@ -58,98 +58,125 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-Wi-WtA" userLabel="InfoBox Stack View">
-                                        <rect key="frame" x="0.0" y="467.66666666666674" width="961" height="128"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="hC2-5q-Dj5" userLabel="InfoBox Stack View">
+                                        <rect key="frame" x="0.0" y="467.66666666666674" width="961" height="168"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVt-IL-QQE" userLabel="Padder">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="128"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bn4-JA-cRS" userLabel="Line View">
+                                                <rect key="frame" x="0.0" y="0.0" width="961" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="HD0-8q-spO"/>
+                                                    <constraint firstAttribute="height" constant="1" id="KfM-Z7-QQg"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ADK-qu-Cnh" userLabel="Info 1 Stack View">
-                                                <rect key="frame" x="123" y="39.666666666666657" width="102" height="48.666666666666657"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-Wi-WtA" userLabel="Inner Stack View">
+                                                <rect key="frame" x="0.0" y="20" width="961" height="128"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Serves &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-0d-HxS" userLabel="Info1 Title Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-5M-TFn" userLabel="Info 1 Amount Label">
-                                                        <rect key="frame" x="45.333333333333343" y="28.333333333333343" width="11.333333333333336" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVt-IL-QQE" userLabel="Padder">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="128"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="HD0-8q-spO"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ADK-qu-Cnh" userLabel="Info 1 Stack View">
+                                                        <rect key="frame" x="108.33333333333331" y="39.666666666666657" width="102" height="48.666666666666657"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Serves &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-0d-HxS" userLabel="Info1 Title Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="102" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-5M-TFn" userLabel="Info 1 Amount Label">
+                                                                <rect key="frame" x="45.333333333333329" y="28.333333333333343" width="11.333333333333336" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkG-CO-wTY" userLabel="Line View">
+                                                        <rect key="frame" x="298.33333333333331" y="0.0" width="1" height="128"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="1" id="NTx-T6-6Jc"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7FP-6z-gis" userLabel="Info 2 Stack View">
+                                                        <rect key="frame" x="387.66666666666669" y="39.666666666666657" width="85.333333333333314" height="48.666666666666657"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Prep &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epv-LJ-aZe" userLabel="Info 2 Title Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="85.333333333333329" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu8-M6-kCo" userLabel="Info 2 Amount Label">
+                                                                <rect key="frame" x="24.000000000000004" y="28.333333333333343" width="37.333333333333343" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ant-2h-AxI" userLabel="Line View">
+                                                        <rect key="frame" x="561.33333333333337" y="0.0" width="1" height="128"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="1" id="fxT-XX-WZt"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f6G-OE-5bO" userLabel="Info 3 Stack View">
+                                                        <rect key="frame" x="650.66666666666663" y="39.666666666666657" width="113" height="48.666666666666657"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Cooking &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNT-9S-DrK" userLabel="Info 3 Title Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="113" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nI-Cc-Fvd" userLabel="Info 3 Amount Label">
+                                                                <rect key="frame" x="37.666666666666742" y="28.333333333333343" width="37.333333333333343" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4J-zb-n8G" userLabel="Padder">
+                                                        <rect key="frame" x="851.66666666666663" y="0.0" width="20" height="128"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="nAf-ZL-TrX"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HiR-Ko-9IH" userLabel="Line View">
+                                                        <rect key="frame" x="960" y="0.0" width="1" height="128"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="1" id="YCu-re-tx6"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkG-CO-wTY" userLabel="Line View">
-                                                <rect key="frame" x="328.33333333333331" y="0.0" width="1" height="128"/>
-                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quk-Ay-dY3" userLabel="Line View">
+                                                <rect key="frame" x="0.0" y="166.99999999999997" width="961" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="1" id="NTx-T6-6Jc"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7FP-6z-gis" userLabel="Info 2 Stack View">
-                                                <rect key="frame" x="432.33333333333331" y="39.666666666666657" width="85.333333333333314" height="48.666666666666657"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Prep &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epv-LJ-aZe" userLabel="Info 2 Title Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="85.333333333333329" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu8-M6-kCo" userLabel="Info 2 Amount Label">
-                                                        <rect key="frame" x="24.000000000000004" y="28.333333333333343" width="37.333333333333343" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ant-2h-AxI" userLabel="Line View">
-                                                <rect key="frame" x="620.66666666666663" y="0.0" width="1" height="128"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="1" id="fxT-XX-WZt"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f6G-OE-5bO" userLabel="Info 3 Stack View">
-                                                <rect key="frame" x="725" y="39.666666666666657" width="113" height="48.666666666666657"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; Cooking &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNT-9S-DrK" userLabel="Info 3 Title Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nI-Cc-Fvd" userLabel="Info 3 Amount Label">
-                                                        <rect key="frame" x="37.666666666666629" y="28.333333333333343" width="37.333333333333343" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4J-zb-n8G" userLabel="Padder">
-                                                <rect key="frame" x="941" y="0.0" width="20" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="nAf-ZL-TrX"/>
+                                                    <constraint firstAttribute="height" constant="1" id="6Fp-oB-VGa"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </stackView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;  Ingredients &gt;&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIk-XL-umg" userLabel="Ingredients Title">
-                                        <rect key="frame" x="0.0" y="615.66666666666663" width="961" height="23"/>
+                                        <rect key="frame" x="0.0" y="655.66666666666663" width="961" height="23"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </label>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pIr-Ge-2sX" userLabel="Ingredients List Stack View">
-                                        <rect key="frame" x="0.0" y="658.66666666666663" width="961" height="50"/>
+                                        <rect key="frame" x="0.0" y="698.66666666666663" width="961" height="50"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </stackView>
                                 </subviews>
@@ -186,10 +213,13 @@
                 <outlet property="imageViewHeightShortConstraint" destination="EW7-XF-hmA" id="bkT-rg-DVA"/>
                 <outlet property="imageViewHeightTallConstraint" destination="79k-cH-0Qe" id="pNR-Mu-uZu"/>
                 <outlet property="info1AmountLabel" destination="SeI-5M-TFn" id="vIg-ae-AfM"/>
+                <outlet property="info1StackView" destination="ADK-qu-Cnh" id="gCT-VB-FAC"/>
                 <outlet property="info1TitleLabel" destination="Ec4-0d-HxS" id="cvh-SP-zBx"/>
                 <outlet property="info2AmountLabel" destination="hu8-M6-kCo" id="wG4-Ep-G19"/>
+                <outlet property="info2StackView" destination="7FP-6z-gis" id="VcK-rw-prs"/>
                 <outlet property="info2TitleLabel" destination="epv-LJ-aZe" id="651-Sk-HT3"/>
                 <outlet property="info3AmountLabel" destination="1nI-Cc-Fvd" id="Kjk-jU-907"/>
+                <outlet property="info3StackView" destination="f6G-OE-5bO" id="cnq-WN-KkC"/>
                 <outlet property="info3TitleLabel" destination="kNT-9S-DrK" id="OQ2-Tz-3AX"/>
                 <outlet property="ingredientsHeadingTitle" destination="bIk-XL-umg" id="410-RZ-HTI"/>
                 <outlet property="ingredientsListStackView" destination="pIr-Ge-2sX" id="I2v-h5-RAf"/>

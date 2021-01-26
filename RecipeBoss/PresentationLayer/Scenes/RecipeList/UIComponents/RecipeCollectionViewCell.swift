@@ -29,10 +29,15 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     
     @IBOutlet private var info1TitleLabel: UILabel!
     @IBOutlet private var info1AmountLabel: UILabel!
+    @IBOutlet private var info1StackView: UIStackView!
+    
     @IBOutlet private var info2TitleLabel: UILabel!
     @IBOutlet private var info2AmountLabel: UILabel!
+    @IBOutlet private var info2StackView: UIStackView!
+    
     @IBOutlet private var info3TitleLabel: UILabel!
     @IBOutlet private var info3AmountLabel: UILabel!
+    @IBOutlet private var info3StackView: UIStackView!
     
     @IBOutlet private var ingredientsHeadingTitle: UILabel!
     @IBOutlet private var ingredientsListStackView: UIStackView!
@@ -189,11 +194,15 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         compactStackView.isHidden = false
         imageViewHeightTallConstraint.isActive = true
         imageViewHeightShortConstraint.isActive = false
+        contentView.setNeedsLayout()
+        contentView.layoutIfNeeded()
     }
     
     private func activateTallerDetailCellMode() {
         compactStackView.isHidden = true
         imageViewHeightShortConstraint.isActive = true
         imageViewHeightTallConstraint.isActive = false
+        contentView.setNeedsLayout()
+        contentView.layoutIfNeeded()
     }
 }

@@ -40,30 +40,30 @@ final class RecipeListViewController: UIViewController {
         bind(to: viewModel)
     }
     
+    
     // MARK: - Private Helpers
     
     private func configureUI() {
 
         collectionView.registerNib(cellClass: RecipeCollectionViewCell.self)
-        collectionView.collectionViewLayout = customRecipeGridLayout()
+        collectionView.collectionViewLayout = customRecipeGridLayout
         collectionView.dataSource = dataSource
-        
-        // TODO:
-        // collectionView.delegate = self
+        collectionView.delegate = self
     }
     
-    private func customRecipeGridLayout() -> UICollectionViewLayout {
+    private lazy var customRecipeGridLayout: UICollectionViewLayout = {
 
         // TODO: improve it or customise as much as needed based on `layoutEnvironment.traitCollection`
 
         return UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            let isCompact = layoutEnvironment.traitCollection.horizontalSizeClass == .compact &&
+                layoutEnvironment.traitCollection.verticalSizeClass == .regular
 
-            let isCompact = layoutEnvironment.traitCollection.horizontalSizeClass == .compact
-            let itemCount = isCompact ? 2 : 6
-//            let itemHeight = isCompact ?
-//                UIScreen.main.bounds.width : UIScreen.main.bounds.width / CGFloat(itemCount) + 60
-            let itemHeight = UIScreen.main.bounds.width / CGFloat(itemCount)
-            let padding: CGFloat = isCompact ? 16 : 24
+            let padding: CGFloat = 16
+            let itemCount = isCompact ? 1 : 2
+            let itemHeight = isCompact ?
+                UIScreen.main.bounds.height - 100 : UIScreen.main.bounds.width / CGFloat(itemCount) - 2*padding
             
             let size = NSCollectionLayoutSize(
                 widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
@@ -82,7 +82,7 @@ final class RecipeListViewController: UIViewController {
             section.interGroupSpacing = padding
             return section
         })
-    }
+    }()
 
     
     private func bind(to viewModel: RecipeListViewModelType) {

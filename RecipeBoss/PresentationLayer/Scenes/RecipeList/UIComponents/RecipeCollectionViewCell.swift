@@ -68,5 +68,5 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     private func cancelMainImageLoading() {
         imageView.image = nil
         imageCancellable?.cancel()
-    }
+    }    
 }

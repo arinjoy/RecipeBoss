@@ -25,8 +25,12 @@ class RecipeListFlowCoordinator: FlowCoordinator {
 }
 
 extension RecipeListFlowCoordinator: RecipeListRouting {
+    
     func showDetails(forRecipe recipeViewModel: RecipeViewModel) {
-        let controller = self.dependencyProvider.recipeDetailsController(recipeViewModel)
-        self.rootController.pushViewController(controller, animated: true)
+        
+        // TODO: Glue the following coce when details view controller is ready
+        
+//        let controller = self.dependencyProvider.recipeDetailsController(recipeViewModel)
+//        self.rootController.pushViewController(controller, animated: true)
     }
 }

@@ -134,11 +134,11 @@ extension RecipeListViewController: UICollectionViewDelegate {
 
         // Check if image store has this image loaded already, then update using the same
         if let image = viewModel.imageStore[indexPath] {
-            // cell.showImage(image: image)
+            cell.showImage(image: image)
         } else {
             // Else, add image loading operation and attach the image update closure
             let updateCellClosure: (UIImage?) -> Void = { [weak self] image in
-                // cell.showImage(image: image)
+                cell.showImage(image: image)
                 self?.viewModel.imageStore[indexPath] = image
                 self?.viewModel.removeImageLoadOperation(atIndexPath: indexPath)
             }

@@ -11,11 +11,22 @@ import Combine
 final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, ReusableView {
     
     // MARK: - Outlets
-    
-    @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var subtitleLabel: UILabel!
     @IBOutlet private var containerView: UIView!
+        
+    /// Image view used in common for both modes
+    @IBOutlet private var imageView: UIImageView!
+    
+    /// Stack view contains the items needed in compact, i.e. grid layout
+    @IBOutlet weak var compactStackView: UIStackView!
+    @IBOutlet private var compactTitleLabel: UILabel!
+    @IBOutlet private var compactSubtitleLabel: UILabel!
+    
+    /// Below Items are shown in potrait mode
+    @IBOutlet weak var headingTitleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var ingredientsHeadingTitle: UILabel!
+    @IBOutlet weak var ingredientsListStackView: UIStackView!
+    
     
     private var imageCancellable: AnyCancellable?
     
@@ -29,15 +40,44 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         applyStyle()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+                
+        // Only this view is programatically managed to show/hide.
+        // The rest of the items are all by default hidden except `wChR`.
+        // They are managed via interface builder
+        if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
+            compactStackView.isHidden = true
+        } else {
+            compactStackView.isHidden = false
+        }
+    }
+    
     
     // MARK: - Configuration
     
     func configure(withViewModel viewModel: RecipeViewModel) {
     
+        // Used in compact cell mode in landscape grid style
+        compactTitleLabel.text = "RECIPE"
+        compactSubtitleLabel.text = viewModel.title
+        if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
+            compactStackView.isHidden = true
+        } else {
+            compactStackView.isHidden = false
+        }
         
-        titleLabel.text = "RECIPE" // FIXED value for now
-        subtitleLabel.text = viewModel.title
+        // Used in longer view mode in potrait style
+        headingTitleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
         
+        ingredientsHeadingTitle.text = "Ingredients"
+        
+        viewModel.ingredients.forEach { ingredient in
+            addIngredientItemToStackView(item: ingredient)
+        }
+        
+        containerView.layoutIfNeeded()
 
         imageCancellable = viewModel.thumbImage
             .receive(on: Scheduler.main)
@@ -62,7 +102,27 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     // MARK: - Private Helpers
     
     private func applyStyle() {
+        headingTitleLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        headingTitleLabel.textColor = .darkText
+        descriptionLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        descriptionLabel.textColor = .darkGray
         
+        compactTitleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        compactTitleLabel.textColor = .systemRed
+        compactSubtitleLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        compactSubtitleLabel.textColor = .darkGray
+        
+        ingredientsHeadingTitle.font = .systemFont(ofSize: 22, weight: .bold)
+        ingredientsHeadingTitle.textColor = .darkText
+        
+    }
+    
+    private func addIngredientItemToStackView(item: String) {
+        let label = UILabel()
+        label.textColor = .darkGray
+        label.numberOfLines = 2
+        label.text = item
+        ingredientsListStackView.addArrangedSubview(label)
     }
     
     private func cancelMainImageLoading() {

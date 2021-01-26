@@ -60,7 +60,7 @@ final class RecipeListViewController: UIViewController {
             let isCompact = layoutEnvironment.traitCollection.horizontalSizeClass == .compact &&
                 layoutEnvironment.traitCollection.verticalSizeClass == .regular
 
-            let padding: CGFloat = 16
+            let padding: CGFloat = isCompact ? 16 : 32
             let itemCount = isCompact ? 1 : 2
             let itemHeight = isCompact ?
                 UIScreen.main.bounds.height - 100 : UIScreen.main.bounds.width / CGFloat(itemCount) - 2*padding

@@ -12,37 +12,37 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeCollectionViewCell" id="gTV-IL-0wX" customClass="RecipeCollectionViewCell" customModule="RecipeBoss" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="678" height="904"/>
+            <rect key="frame" x="0.0" y="0.0" width="961" height="1209"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="678" height="904"/>
+                <rect key="frame" x="0.0" y="0.0" width="961" height="1209"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O97-lO-eu9" userLabel="ContainerView">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="904"/>
+                        <rect key="frame" x="0.0" y="0.0" width="961" height="1209"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uRi-OK-QpQ">
-                                <rect key="frame" x="0.0" y="0.0" width="678" height="1077"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uRi-OK-QpQ">
+                                <rect key="frame" x="0.0" y="0.0" width="961" height="1110.3333333333333"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;  A big long recipe name that appear as heading&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZh-OS-R4P" userLabel="Heading Title Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="678" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="961" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;  A big long recipe name that appear as heading&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFT-zK-alj" userLabel="Description Label">
-                                        <rect key="frame" x="0.0" y="34" width="678" height="19.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="40" width="961" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_recipe_image" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-ts-04H">
-                                        <rect key="frame" x="0.0" y="63.333333333333314" width="678" height="872"/>
+                                        <rect key="frame" x="0.0" y="75.333333333333314" width="961" height="872"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gpE-C8-EzT" userLabel="Compact Stack View">
-                                        <rect key="frame" x="0.0" y="945.33333333333337" width="678" height="42"/>
+                                        <rect key="frame" x="0.0" y="963.33333333333337" width="961" height="42"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; RECIPE &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKv-fX-q7Q" userLabel="Title Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="17"/>
@@ -59,28 +59,14 @@
                                         </subviews>
                                     </stackView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;  Ingredients &gt;&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIk-XL-umg" userLabel="Ingredients Title">
-                                        <rect key="frame" x="0.0" y="997.33333333333337" width="678" height="23"/>
+                                        <rect key="frame" x="0.0" y="1021.3333333333335" width="961" height="23"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </label>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pIr-Ge-2sX" userLabel="Ingredients List Stack View">
-                                        <rect key="frame" x="0.0" y="1030.3333333333333" width="678" height="46.666666666666742"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;   Second item of ingredient list &gt;&gt;" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Un2-7t-fmu" userLabel="Ingredient Item 2 Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="678" height="19.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;   First item of ingredient list &gt;&gt;" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAA-8N-Q6u" userLabel="Ingredient Item 1 Label">
-                                                <rect key="frame" x="0.0" y="27.333333333333485" width="678" height="19.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pIr-Ge-2sX" userLabel="Ingredients List Stack View">
+                                        <rect key="frame" x="0.0" y="1060.3333333333333" width="961" height="50"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </stackView>
                                 </subviews>
@@ -109,14 +95,19 @@
                 <constraint firstAttribute="trailing" secondItem="O97-lO-eu9" secondAttribute="trailing" id="e1F-Tw-kWM"/>
                 <constraint firstAttribute="bottom" secondItem="O97-lO-eu9" secondAttribute="bottom" id="lgA-yT-DZo"/>
             </constraints>
-            <size key="customSize" width="678" height="904"/>
+            <size key="customSize" width="961" height="1209"/>
             <connections>
+                <outlet property="compactStackView" destination="gpE-C8-EzT" id="a1P-YO-Psd"/>
+                <outlet property="compactSubtitleLabel" destination="ALX-dL-j0X" id="aXh-Sz-aIQ"/>
+                <outlet property="compactTitleLabel" destination="iKv-fX-q7Q" id="SDD-YJ-su4"/>
                 <outlet property="containerView" destination="O97-lO-eu9" id="CSE-a8-Gfv"/>
+                <outlet property="descriptionLabel" destination="lFT-zK-alj" id="gfa-sl-2H1"/>
+                <outlet property="headingTitleLabel" destination="xZh-OS-R4P" id="S1J-uA-Cu1"/>
                 <outlet property="imageView" destination="Nkr-ts-04H" id="I5l-Nv-Gfm"/>
-                <outlet property="subtitleLabel" destination="ALX-dL-j0X" id="aXh-Sz-aIQ"/>
-                <outlet property="titleLabel" destination="iKv-fX-q7Q" id="SDD-YJ-su4"/>
+                <outlet property="ingredientsHeadingTitle" destination="bIk-XL-umg" id="410-RZ-HTI"/>
+                <outlet property="ingredientsListStackView" destination="pIr-Ge-2sX" id="I2v-h5-RAf"/>
             </connections>
-            <point key="canvasLocation" x="267.69230769230768" y="336.96682464454977"/>
+            <point key="canvasLocation" x="485.38461538461536" y="445.37914691943126"/>
         </collectionViewCell>
     </objects>
     <resources>

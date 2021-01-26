@@ -52,18 +52,19 @@ final class RecipeListViewController: UIViewController {
     }
     
     private lazy var customRecipeGridLayout: UICollectionViewLayout = {
-
-        // TODO: improve it or customise as much as needed based on `layoutEnvironment.traitCollection`
-
+        
         return UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             
-            let isCompact = layoutEnvironment.traitCollection.horizontalSizeClass == .compact &&
+            // NOTE: THIS LOGIC IS NOT ENOUGH TO DETECT LANDSCAPE OR POTRAIT MODE
+            // Size classes cannot give this value precisely for lareger iPads full screen apps.
+            // This below check owrks mostly on iPhones, not on most iPads
+            let isCompactWidth = layoutEnvironment.traitCollection.horizontalSizeClass == .compact &&
                 layoutEnvironment.traitCollection.verticalSizeClass == .regular
 
-            let padding: CGFloat = isCompact ? 16 : 32
-            let itemCount = isCompact ? 1 : 2
-            let itemHeight = isCompact ?
-                UIScreen.main.bounds.height - 100 : UIScreen.main.bounds.width / CGFloat(itemCount) - 2*padding
+            let padding: CGFloat = isCompactWidth ? 16 : 32
+            let itemCount = isCompactWidth ? 1 : 2
+            let itemHeight = isCompactWidth ?
+                UIScreen.main.bounds.height - 100 : UIScreen.main.bounds.width / CGFloat(itemCount) * 0.75
             
             let size = NSCollectionLayoutSize(
                 widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),

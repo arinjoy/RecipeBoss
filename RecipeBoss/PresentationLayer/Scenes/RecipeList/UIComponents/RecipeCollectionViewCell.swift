@@ -15,20 +15,25 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         
     /// Image view used in common for both modes
     @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var imageViewHeightShortConstraint: NSLayoutConstraint!
+    @IBOutlet private var imageViewHeightTallConstraint: NSLayoutConstraint!
     
     /// Stack view contains the items needed in compact, i.e. grid layout
-    @IBOutlet weak var compactStackView: UIStackView!
+    @IBOutlet private var compactStackView: UIStackView!
     @IBOutlet private var compactTitleLabel: UILabel!
     @IBOutlet private var compactSubtitleLabel: UILabel!
     
     /// Below Items are shown in potrait mode
-    @IBOutlet weak var headingTitleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var ingredientsHeadingTitle: UILabel!
-    @IBOutlet weak var ingredientsListStackView: UIStackView!
+    @IBOutlet private var headingTitleLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var ingredientsHeadingTitle: UILabel!
+    @IBOutlet private var ingredientsListStackView: UIStackView!
     
+    
+    // MARK: - Properties
     
     private var imageCancellable: AnyCancellable?
+    
     
     // MARK: - Lifecycle
     
@@ -36,7 +41,6 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         super.awakeFromNib()
         
         imageView.image = UIImage(named: "recipe_placeholder_icon")
-        
         applyStyle()
     }
     
@@ -46,10 +50,14 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         // Only this view is programatically managed to show/hide.
         // The rest of the items are all by default hidden except `wChR`.
         // They are managed via interface builder
+        
+        // NOTE: THIS LOGIC IS NOT ENOUGH TO DETECT LANDSCAPE OR POTRAIT MODE
+        // Size classes cannot give this value precisely for lareger iPads full screen apps.
+        // This below check owrks mostly on iPhones, not on most iPads
         if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
-            compactStackView.isHidden = true
+            activateTallerDetailCellMode()
         } else {
-            compactStackView.isHidden = false
+            activateCompactGridCellMode()
         }
     }
     
@@ -61,10 +69,14 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         // Used in compact cell mode in landscape grid style
         compactTitleLabel.text = "RECIPE"
         compactSubtitleLabel.text = viewModel.title
+        
+        // NOTE: THIS LOGIC IS NOT ENOUGH TO DETECT LANDSCAPE OR POTRAIT MODE
+        // Size classes cannot give this value precisely for lareger iPads full screen apps.
+        // This below check owrks mostly on iPhones, not on most iPads
         if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
-            compactStackView.isHidden = true
+            activateTallerDetailCellMode()
         } else {
-            compactStackView.isHidden = false
+            activateCompactGridCellMode()
         }
         
         // Used in longer view mode in potrait style
@@ -127,7 +139,6 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
             chevronIcon.heightAnchor.constraint(equalToConstant: 16)
         ])
         
-        
         let label = UILabel()
         label.textColor = .darkGray
         label.numberOfLines = 2
@@ -145,5 +156,17 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     private func cancelMainImageLoading() {
         imageView.image = nil
         imageCancellable?.cancel()
+    }
+    
+    private func activateCompactGridCellMode() {
+        compactStackView.isHidden = false
+        imageViewHeightTallConstraint.isActive = true
+        imageViewHeightShortConstraint.isActive = false
+    }
+    
+    private func activateTallerDetailCellMode() {
+        compactStackView.isHidden = true
+        imageViewHeightShortConstraint.isActive = true
+        imageViewHeightTallConstraint.isActive = false
     }
 }

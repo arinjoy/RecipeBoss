@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="961" height="1209"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uRi-OK-QpQ">
-                                <rect key="frame" x="0.0" y="0.0" width="961" height="1110.3333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="961" height="540.66666666666663"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;  A big long recipe name that appear as heading&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZh-OS-R4P" userLabel="Heading Title Label">
                                         <rect key="frame" x="0.0" y="0.0" width="961" height="24"/>
@@ -39,10 +39,10 @@
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_recipe_image" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-ts-04H">
-                                        <rect key="frame" x="0.0" y="75.333333333333314" width="961" height="872"/>
+                                        <rect key="frame" x="0.0" y="75.333333333333343" width="961" height="302.33333333333326"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gpE-C8-EzT" userLabel="Compact Stack View">
-                                        <rect key="frame" x="0.0" y="963.33333333333337" width="961" height="42"/>
+                                        <rect key="frame" x="0.0" y="393.66666666666669" width="961" height="42"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt; RECIPE &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKv-fX-q7Q" userLabel="Title Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="17"/>
@@ -59,14 +59,14 @@
                                         </subviews>
                                     </stackView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;  Ingredients &gt;&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIk-XL-umg" userLabel="Ingredients Title">
-                                        <rect key="frame" x="0.0" y="1021.3333333333335" width="961" height="23"/>
+                                        <rect key="frame" x="0.0" y="451.66666666666669" width="961" height="23"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </label>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pIr-Ge-2sX" userLabel="Ingredients List Stack View">
-                                        <rect key="frame" x="0.0" y="1060.3333333333333" width="961" height="50"/>
+                                        <rect key="frame" x="0.0" y="490.66666666666674" width="961" height="50"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </stackView>
                                 </subviews>
@@ -74,17 +74,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nkr-ts-04H" firstAttribute="height" secondItem="O97-lO-eu9" secondAttribute="height" multiplier="0.8" id="0eH-LS-YEt"/>
+                            <constraint firstItem="Nkr-ts-04H" firstAttribute="height" secondItem="O97-lO-eu9" secondAttribute="height" multiplier="0.5" id="79k-cH-0Qe"/>
                             <constraint firstItem="Nkr-ts-04H" firstAttribute="width" secondItem="O97-lO-eu9" secondAttribute="width" id="B3Q-tI-UyC"/>
+                            <constraint firstItem="Nkr-ts-04H" firstAttribute="height" secondItem="O97-lO-eu9" secondAttribute="height" multiplier="0.25" id="EW7-XF-hmA" userLabel="Image Height Short Constraint"/>
                             <constraint firstItem="uRi-OK-QpQ" firstAttribute="leading" secondItem="O97-lO-eu9" secondAttribute="leading" id="Rts-gn-z8G"/>
                             <constraint firstAttribute="trailing" secondItem="uRi-OK-QpQ" secondAttribute="trailing" id="Z3Z-d6-uwl"/>
                             <constraint firstItem="uRi-OK-QpQ" firstAttribute="top" secondItem="O97-lO-eu9" secondAttribute="top" id="e9c-Ot-sca"/>
                         </constraints>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="0eH-LS-YEt"/>
-                            </mask>
-                        </variation>
                     </view>
                 </subviews>
             </view>
@@ -104,6 +100,8 @@
                 <outlet property="descriptionLabel" destination="lFT-zK-alj" id="gfa-sl-2H1"/>
                 <outlet property="headingTitleLabel" destination="xZh-OS-R4P" id="S1J-uA-Cu1"/>
                 <outlet property="imageView" destination="Nkr-ts-04H" id="I5l-Nv-Gfm"/>
+                <outlet property="imageViewHeightShortConstraint" destination="EW7-XF-hmA" id="bkT-rg-DVA"/>
+                <outlet property="imageViewHeightTallConstraint" destination="79k-cH-0Qe" id="pNR-Mu-uZu"/>
                 <outlet property="ingredientsHeadingTitle" destination="bIk-XL-umg" id="410-RZ-HTI"/>
                 <outlet property="ingredientsListStackView" destination="pIr-Ge-2sX" id="I2v-h5-RAf"/>
             </connections>

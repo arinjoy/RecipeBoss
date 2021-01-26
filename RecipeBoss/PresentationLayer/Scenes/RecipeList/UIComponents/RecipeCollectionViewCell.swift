@@ -26,6 +26,14 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     /// Below Items are shown in potrait mode
     @IBOutlet private var headingTitleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
+    
+    @IBOutlet private var info1TitleLabel: UILabel!
+    @IBOutlet private var info1AmountLabel: UILabel!
+    @IBOutlet private var info2TitleLabel: UILabel!
+    @IBOutlet private var info2AmountLabel: UILabel!
+    @IBOutlet private var info3TitleLabel: UILabel!
+    @IBOutlet private var info3AmountLabel: UILabel!
+    
     @IBOutlet private var ingredientsHeadingTitle: UILabel!
     @IBOutlet private var ingredientsListStackView: UIStackView!
     
@@ -83,6 +91,15 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         headingTitleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
         
+        info1TitleLabel.text = viewModel.servesInfo.label
+        info1AmountLabel.text = "\(viewModel.servesInfo.amount)"
+        
+        info2TitleLabel.text = viewModel.preparationTimeInfo.label
+        info2AmountLabel.text = viewModel.preparationTimeInfo.text
+        
+        info3TitleLabel.text = viewModel.cookingTimeInfo.label
+        info3AmountLabel.text = viewModel.cookingTimeInfo.text
+        
         ingredientsHeadingTitle.text = "Ingredients"
         
         viewModel.ingredients.forEach { ingredient in
@@ -123,6 +140,16 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         compactTitleLabel.textColor = .systemRed
         compactSubtitleLabel.font = .systemFont(ofSize: 16, weight: .regular)
         compactSubtitleLabel.textColor = .darkGray
+        
+        for label in [info1TitleLabel, info2TitleLabel, info3TitleLabel] {
+            label?.font = .systemFont(ofSize: 16, weight: .regular)
+            label?.textColor = .darkGray
+        }
+        
+        for label in [info1AmountLabel, info3AmountLabel, info3AmountLabel] {
+            label?.font = .systemFont(ofSize: 18, weight: .bold)
+            label?.textColor = .darkText
+        }
         
         ingredientsHeadingTitle.font = .systemFont(ofSize: 22, weight: .bold)
         ingredientsHeadingTitle.textColor = .darkText

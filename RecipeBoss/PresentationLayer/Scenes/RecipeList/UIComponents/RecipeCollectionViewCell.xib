@@ -65,7 +65,7 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </label>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pIr-Ge-2sX" userLabel="Ingredients List Stack View">
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pIr-Ge-2sX" userLabel="Ingredients List Stack View">
                                         <rect key="frame" x="0.0" y="1060.3333333333333" width="961" height="50"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                                     </stackView>

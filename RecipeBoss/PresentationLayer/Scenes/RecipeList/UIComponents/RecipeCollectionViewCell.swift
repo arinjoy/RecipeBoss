@@ -102,7 +102,7 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     // MARK: - Private Helpers
     
     private func applyStyle() {
-        headingTitleLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        headingTitleLabel.font = .systemFont(ofSize: 26, weight: .bold)
         headingTitleLabel.textColor = .darkText
         descriptionLabel.font = .systemFont(ofSize: 16, weight: .regular)
         descriptionLabel.textColor = .darkGray
@@ -118,15 +118,32 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
     }
     
     private func addIngredientItemToStackView(item: String) {
+        
+        let chevronIcon = UIImageView(image: UIImage(systemName: "chevron.forward"))
+        chevronIcon.contentMode = .scaleAspectFit
+        chevronIcon.tintColor = .darkGray
+        NSLayoutConstraint.activate([
+            chevronIcon.widthAnchor.constraint(equalToConstant: 16),
+            chevronIcon.heightAnchor.constraint(equalToConstant: 16)
+        ])
+        
+        
         let label = UILabel()
         label.textColor = .darkGray
         label.numberOfLines = 2
         label.text = item
-        ingredientsListStackView.addArrangedSubview(label)
+      
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.alignment = .firstBaseline
+        stack.spacing = 10
+        stack.addArrangedSubview(chevronIcon)
+        stack.addArrangedSubview(label)
+        ingredientsListStackView.addArrangedSubview(stack)
     }
     
     private func cancelMainImageLoading() {
         imageView.image = nil
         imageCancellable?.cancel()
-    }    
+    }
 }

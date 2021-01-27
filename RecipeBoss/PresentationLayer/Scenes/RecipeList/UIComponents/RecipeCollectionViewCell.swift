@@ -55,6 +55,7 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         
         imageView.image = UIImage(named: "recipe_placeholder_icon")
         applyStyle()
+        setupAccessibility()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -110,14 +111,15 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         viewModel.ingredients.forEach { ingredient in
             addIngredientItemToStackView(item: ingredient)
         }
-        
-        containerView.layoutIfNeeded()
+        contentView.layoutIfNeeded()
 
         imageCancellable = viewModel.thumbImage
             .receive(on: Scheduler.main)
             .sink { [unowned self] image in
                 self.showImage(image: image)
             }
+        
+        applyAccessibility(from: viewModel)
     }
     
     func showImage(image: UIImage?) {
@@ -158,7 +160,24 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         
         ingredientsHeadingTitle.font = .systemFont(ofSize: 22, weight: .bold)
         ingredientsHeadingTitle.textColor = .darkText
+    }
+    
+    private func setupAccessibility() {
         
+        imageView.isAccessibilityElement = true
+        
+        for label in [info1TitleLabel,
+                      info1AmountLabel,
+                      info2TitleLabel,
+                      info2AmountLabel,
+                      info3TitleLabel,
+                      info3AmountLabel,] {
+            label?.isAccessibilityElement = false
+        }
+        
+        for view in [info1StackView, info2StackView, info3StackView] {
+            view?.isAccessibilityElement = true
+        }
     }
     
     private func addIngredientItemToStackView(item: String) {
@@ -195,7 +214,6 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         imageViewHeightTallConstraint.isActive = true
         imageViewHeightShortConstraint.isActive = false
         contentView.setNeedsLayout()
-        contentView.layoutIfNeeded()
     }
     
     private func activateTallerDetailCellMode() {
@@ -203,6 +221,31 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         imageViewHeightShortConstraint.isActive = true
         imageViewHeightTallConstraint.isActive = false
         contentView.setNeedsLayout()
-        contentView.layoutIfNeeded()
+    }
+    
+    private func applyAccessibility(from viewModel: RecipeViewModel) {
+        viewModel.accessibility?.container.apply(to: contentView)
+        viewModel.accessibility?.title.apply(to: headingTitleLabel)
+        viewModel.accessibility?.title.apply(to: compactSubtitleLabel)
+        viewModel.accessibility?.description.apply(to: descriptionLabel)
+        viewModel.accessibility?.image.apply(to: imageView)
+        viewModel.accessibility?.servesInfo.apply(to: info1StackView)
+        viewModel.accessibility?.preparationTimeInfo.apply(to: info2StackView)
+        viewModel.accessibility?.cookingTimeInfo.apply(to: info3StackView)
+        viewModel.accessibility?.ingredientsHeading.apply(to: ingredientsHeadingTitle)
+        
+        viewModel.accessibility?.compactTitle.apply(to: compactTitleLabel)
+        viewModel.accessibility?.compactSubtitle.apply(to: compactSubtitleLabel)
+        
+        for (index, item) in viewModel.ingredients.enumerated() {
+            if index < ingredientsListStackView.arrangedSubviews.count {
+                let accessibility = AccessibilityConfiguration(
+                    identifier: AccessibilityIdentifiers.RecipeDetail.ingredientsListItemId,
+                    label: item,
+                    traits: .staticText)
+                let view = ingredientsListStackView.arrangedSubviews[index]
+                accessibility.apply(to: view)
+            }
+        }
     }
 }

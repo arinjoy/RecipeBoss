@@ -54,6 +54,7 @@
 		0ED6DD5A25BA182900502698 /* FlowCoordinator+DependencyProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5625BA182900502698 /* FlowCoordinator+DependencyProviders.swift */; };
 		0ED6DD5B25BA182900502698 /* ApplicationComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5725BA182900502698 /* ApplicationComponentsFactory.swift */; };
 		0ED6DD5F25BA19F600502698 /* RecipeListRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5E25BA19F600502698 /* RecipeListRouting.swift */; };
+		0EE043F425C0C3FB008D4747 /* Recipe+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE043F325C0C3FB008D4747 /* Recipe+Accessibility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		0ED6DD5625BA182900502698 /* FlowCoordinator+DependencyProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowCoordinator+DependencyProviders.swift"; sourceTree = "<group>"; };
 		0ED6DD5725BA182900502698 /* ApplicationComponentsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationComponentsFactory.swift; sourceTree = "<group>"; };
 		0ED6DD5E25BA19F600502698 /* RecipeListRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRouting.swift; sourceTree = "<group>"; };
+		0EE043F325C0C3FB008D4747 /* Recipe+Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+Accessibility.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,8 +370,9 @@
 			children = (
 				0E87062D25BEBD34006DD94E /* RecipeeListViewModelType.swift */,
 				0E87063325BEBE96006DD94E /* RecipeListViewModel.swift */,
-				0E00FCBB25BF827900492857 /* RecipeViewModel.swift */,
 				0E00FCBF25BF870400492857 /* RecipeViewModelTransformer.swift */,
+				0E00FCBB25BF827900492857 /* RecipeViewModel.swift */,
+				0EE043F325C0C3FB008D4747 /* Recipe+Accessibility.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE043F425C0C3FB008D4747 /* Recipe+Accessibility.swift in Sources */,
 				0E87061A25BE1AA1006DD94E /* ApiConstants.swift in Sources */,
 				0ED6DD5925BA182900502698 /* ApplicationFlowCoordinator.swift in Sources */,
 				0E87061025BE165B006DD94E /* RecipeUseCase.swift in Sources */,

@@ -40,6 +40,9 @@
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_recipe_image" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-ts-04H">
                                         <rect key="frame" x="0.0" y="83.333333333333343" width="961" height="302.33333333333326"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gpE-C8-EzT" userLabel="Compact Stack View">
                                         <rect key="frame" x="0.0" y="405.66666666666669" width="961" height="42"/>

@@ -15,14 +15,12 @@ final class PlaceholderViewController: UIViewController {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         applyStyles()
-        configureAccessibility()
     }
 
     // MARK: - Public
@@ -42,16 +40,22 @@ final class PlaceholderViewController: UIViewController {
     // MARK: - Private Helpers
     
     private func render(viewModel: PlaceholderViewModel) {
+        imageView.image = viewModel.image
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
-        imageView.image = viewModel.image
+        
+        viewModel.accessibility?.container.apply(to: view)
+        viewModel.accessibility?.image.apply(to: imageView)
+        viewModel.accessibility?.title.apply(to: titleLabel)
+        viewModel.accessibility?.description.apply(to: descriptionLabel)
     }
 
     private func applyStyles() {
         view.backgroundColor = .white
-
+        
         imageView.tintColor = .darkGray
         imageView.contentMode = .scaleAspectFit
+        imageView.isAccessibilityElement = true
 
         for label in [titleLabel, descriptionLabel] {
             label?.textColor = .darkText
@@ -63,18 +67,5 @@ final class PlaceholderViewController: UIViewController {
         
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         descriptionLabel.font = .systemFont(ofSize: 16, weight: .regular)
-    }
-    
-    private func configureAccessibility() {
-        view.accessibilityIdentifier = "" //AccessibilityIdentifiers.ListPlaceholder.rootViewId
-        titleLabel.accessibilityIdentifier = "" //AccessibilityIdentifiers.ListPlaceholder.titleLabelId
-        descriptionLabel.accessibilityIdentifier = ""
-            // AccessibilityIdentifiers.ListPlaceholder.descriptionLabelId
-        
-        titleLabel.accessibilityTraits = .header
-        descriptionLabel.accessibilityTraits = .staticText
-        
-        imageView.isAccessibilityElement = true
-        imageView.accessibilityTraits = .image
     }
 }

@@ -59,6 +59,7 @@
 		0EE043FE25C15834008D4747 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE043FB25C15834008D4747 /* PlaceholderViewController.swift */; };
 		0EE043FF25C15834008D4747 /* PlaceholderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE043FC25C15834008D4747 /* PlaceholderViewController.xib */; };
 		0EE0440725C15DE8008D4747 /* UIView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0440625C15DE8008D4747 /* UIView+Common.swift */; };
+		0EE0441125C16153008D4747 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0441025C16153008D4747 /* AccessibilityIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		0EE043FB25C15834008D4747 /* PlaceholderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
 		0EE043FC25C15834008D4747 /* PlaceholderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderViewController.xib; sourceTree = "<group>"; };
 		0EE0440625C15DE8008D4747 /* UIView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Common.swift"; sourceTree = "<group>"; };
+		0EE0441025C16153008D4747 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				0E00FCCE25BF965300492857 /* UIAccessibility+Helpers.swift */,
+				0EE0441025C16153008D4747 /* AccessibilityIdentifiers.swift */,
 			);
 			path = Accessibility;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				0E00FCAF25BF725B00492857 /* ImageLoaderServiceType.swift in Sources */,
 				0E071AB925BAD8D300FDB993 /* NetworkService.swift in Sources */,
 				0E00FCAE25BF725B00492857 /* ImageLoaderService.swift in Sources */,
+				0EE0441125C16153008D4747 /* AccessibilityIdentifiers.swift in Sources */,
 				0E87060925BE129A006DD94E /* Recipe+DomainModel.swift in Sources */,
 				0E87063425BEBE96006DD94E /* RecipeListViewModel.swift in Sources */,
 				0E00FCBC25BF827900492857 /* RecipeViewModel.swift in Sources */,

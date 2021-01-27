@@ -55,6 +55,10 @@
 		0ED6DD5B25BA182900502698 /* ApplicationComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5725BA182900502698 /* ApplicationComponentsFactory.swift */; };
 		0ED6DD5F25BA19F600502698 /* RecipeListRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6DD5E25BA19F600502698 /* RecipeListRouting.swift */; };
 		0EE043F425C0C3FB008D4747 /* Recipe+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE043F325C0C3FB008D4747 /* Recipe+Accessibility.swift */; };
+		0EE043FD25C15834008D4747 /* PlaceholderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE043FA25C15834008D4747 /* PlaceholderViewModel.swift */; };
+		0EE043FE25C15834008D4747 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE043FB25C15834008D4747 /* PlaceholderViewController.swift */; };
+		0EE043FF25C15834008D4747 /* PlaceholderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE043FC25C15834008D4747 /* PlaceholderViewController.xib */; };
+		0EE0440725C15DE8008D4747 /* UIView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0440625C15DE8008D4747 /* UIView+Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +122,10 @@
 		0ED6DD5725BA182900502698 /* ApplicationComponentsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationComponentsFactory.swift; sourceTree = "<group>"; };
 		0ED6DD5E25BA19F600502698 /* RecipeListRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRouting.swift; sourceTree = "<group>"; };
 		0EE043F325C0C3FB008D4747 /* Recipe+Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+Accessibility.swift"; sourceTree = "<group>"; };
+		0EE043FA25C15834008D4747 /* PlaceholderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderViewModel.swift; sourceTree = "<group>"; };
+		0EE043FB25C15834008D4747 /* PlaceholderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
+		0EE043FC25C15834008D4747 /* PlaceholderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderViewController.xib; sourceTree = "<group>"; };
+		0EE0440625C15DE8008D4747 /* UIView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Common.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +272,7 @@
 		0E1E383D25B9928700CE7BE5 /* RecipeList */ = {
 			isa = PBXGroup;
 			children = (
+				0EE043F925C1580F008D4747 /* PlaceholderView */,
 				0E87062C25BEBD1F006DD94E /* ViewModels */,
 				0E1E383E25B9929500CE7BE5 /* UIComponents */,
 				0ED6DD5E25BA19F600502698 /* RecipeListRouting.swift */,
@@ -294,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				0E1E384825B9936A00CE7BE5 /* UICollectionView+Common.swift */,
+				0EE0440625C15DE8008D4747 /* UIView+Common.swift */,
 			);
 			path = "UI+Utils";
 			sourceTree = "<group>";
@@ -386,6 +396,16 @@
 				0ED6DD5425BA182900502698 /* RecipeListFlowCoordinator.swift */,
 			);
 			path = FlowCoordinators;
+			sourceTree = "<group>";
+		};
+		0EE043F925C1580F008D4747 /* PlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+				0EE043FB25C15834008D4747 /* PlaceholderViewController.swift */,
+				0EE043FC25C15834008D4747 /* PlaceholderViewController.xib */,
+				0EE043FA25C15834008D4747 /* PlaceholderViewModel.swift */,
+			);
+			path = PlaceholderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +504,7 @@
 				0E071AC725BAE18000FDB993 /* recipesSample.json in Resources */,
 				0E00FCA725BEEA5D00492857 /* Image.xcassets in Resources */,
 				0E1E382425B98D3100CE7BE5 /* Main.storyboard in Resources */,
+				0EE043FF25C15834008D4747 /* PlaceholderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +526,7 @@
 			files = (
 				0EE043F425C0C3FB008D4747 /* Recipe+Accessibility.swift in Sources */,
 				0E87061A25BE1AA1006DD94E /* ApiConstants.swift in Sources */,
+				0EE043FE25C15834008D4747 /* PlaceholderViewController.swift in Sources */,
 				0ED6DD5925BA182900502698 /* ApplicationFlowCoordinator.swift in Sources */,
 				0E87061025BE165B006DD94E /* RecipeUseCase.swift in Sources */,
 				0E8705FA25BD9F68006DD94E /* Resource+RecipeListResponse.swift in Sources */,
@@ -512,6 +534,7 @@
 				0E1E384125B992C600CE7BE5 /* RecipeCollectionViewCell.swift in Sources */,
 				0E071ABD25BADA8500FDB993 /* Publisher+Extensions.swift in Sources */,
 				0E00FCB025BF725B00492857 /* ImageLoadOperation.swift in Sources */,
+				0EE043FD25C15834008D4747 /* PlaceholderViewModel.swift in Sources */,
 				0E071AC325BAE12A00FDB993 /* LocalStubbedDataService.swift in Sources */,
 				0ED6DD5A25BA182900502698 /* FlowCoordinator+DependencyProviders.swift in Sources */,
 				0E071AB325BAD82700FDB993 /* Resource.swift in Sources */,
@@ -522,6 +545,7 @@
 				0E1E382125B98D3100CE7BE5 /* RecipeListViewController.swift in Sources */,
 				0E87060525BE1242006DD94E /* RecipesUseCaseType.swift in Sources */,
 				0E1E384A25B9936A00CE7BE5 /* UICollectionView+Common.swift in Sources */,
+				0EE0440725C15DE8008D4747 /* UIView+Common.swift in Sources */,
 				0E071AAF25BAD80A00FDB993 /* NetworkServiceType.swift in Sources */,
 				0E87062E25BEBD34006DD94E /* RecipeeListViewModelType.swift in Sources */,
 				0E00FCAF25BF725B00492857 /* ImageLoaderServiceType.swift in Sources */,

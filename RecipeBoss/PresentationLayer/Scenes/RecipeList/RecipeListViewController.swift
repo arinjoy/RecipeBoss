@@ -15,6 +15,10 @@ final class RecipeListViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var loadingView: UIView!
     
+    private lazy var placeholderViewController = {
+        return PlaceholderViewController(nibName: nil, bundle: nil)
+    }()
+    
     var viewModel: RecipeListViewModelType!
     
     // MARK: - Private properties
@@ -33,6 +37,10 @@ final class RecipeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Inject the placeholder view at start as
+        // it will be needeed to be shownif no results or error
+        add(placeholderViewController)
         
         configureUI()
         
@@ -106,18 +114,35 @@ final class RecipeListViewController: UIViewController {
     private func render(_ state: RecipeListState) {
         switch state {
         case .loading:
-            // TODO:
+            placeholderViewController.view.isHidden = true
             loadingView.isHidden = false
+            update(with: [], animate: true)
+        
         case .noResults:
-            // TODO:
-            break
+            placeholderViewController.view.isHidden = false
+            placeholderViewController.showNoResults()
+            loadingView.isHidden = true
+            update(with: [], animate: true)
+        
         case .failure(let error):
-            // TODO:
-            break
+            placeholderViewController.view.isHidden = false
+            
+            // Note: Handle more and more custom error cases to tweak the
+            // error message copy if needed...
+            
+            switch error {
+            case .networkFailure, .timeout:
+                placeholderViewController.showConnectivityError()
+            default:
+                placeholderViewController.showGenericError()
+            }
+
+            loadingView.isHidden = true
+            update(with: [], animate: true)
+            
         case .success(let recipes):
             loadingView.isHidden = true
             update(with: recipes, animate: true)
-        break
         }
     }
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceholderViewController" customModule="RecipeBoss" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="hnp-qq-Oky" id="YHw-P9-Bgx"/>
+                <outlet property="imageView" destination="sgk-nR-Usr" id="afh-LK-PZY"/>
+                <outlet property="titleLabel" destination="n6x-lU-mYV" id="3Z3-fy-XDe"/>
+                <outlet property="view" destination="BDS-vt-aBS" id="MeI-VB-YaK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="BDS-vt-aBS">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wx3-Im-10r">
+                    <rect key="frame" x="24" y="164" width="366" height="138.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sgk-nR-Usr" userLabel="Image View">
+                            <rect key="frame" x="153" y="2.5" width="60" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="WXa-8e-e0B"/>
+                                <constraint firstAttribute="width" constant="60" id="d7i-Fk-v8k"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;No results&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-lU-mYV">
+                            <rect key="frame" x="121" y="80" width="124" height="20.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;Start searching for photos&gt;&gt;" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnp-qq-Oky">
+                            <rect key="frame" x="75" y="120.5" width="216" height="18"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ZLf-cA-8vO"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wx3-Im-10r" firstAttribute="centerX" secondItem="ZLf-cA-8vO" secondAttribute="centerX" id="6rO-dR-dc8"/>
+                <constraint firstItem="wx3-Im-10r" firstAttribute="leading" secondItem="ZLf-cA-8vO" secondAttribute="leading" constant="24" id="VzF-HQ-vjA"/>
+                <constraint firstItem="wx3-Im-10r" firstAttribute="top" secondItem="ZLf-cA-8vO" secondAttribute="top" constant="120" id="Wbe-J9-H1F"/>
+                <constraint firstItem="ZLf-cA-8vO" firstAttribute="trailing" secondItem="wx3-Im-10r" secondAttribute="trailing" constant="24" id="rCX-yI-3JK"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="111.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cloud" catalog="system" width="128" height="87"/>
+    </resources>
+</document>

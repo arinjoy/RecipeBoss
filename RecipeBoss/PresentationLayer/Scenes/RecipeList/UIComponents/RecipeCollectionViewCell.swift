@@ -192,7 +192,7 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         
         let label = UILabel()
         label.textColor = .darkGray
-        label.numberOfLines = 2
+        label.numberOfLines = 4
         label.text = item
       
         let stack = UIStackView()

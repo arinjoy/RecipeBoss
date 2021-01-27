@@ -16,19 +16,22 @@ final class RecipeViewModelTransformerSpec: QuickSpec {
         
         describe("Recipe ViewModel Transformer Spec") {
             
-            var trasformer: RecipeViewModelTransformer!
+            var trasformerUT: RecipeViewModelTransformer!
             var result: RecipeViewModel!
             
             beforeEach {
-                trasformer = RecipeViewModelTransformer()
-                result = trasformer.viewModel(from: TestHelper().sampleRecipeDomainModel(),
-                                              imageLoader: { _ in
-                                                return AnyPublisher.empty()
-                                              })
+                trasformerUT = RecipeViewModelTransformer()
             }
             
             it("should tranform raw/domain data item correctly into its correct presentation view model item") {
-        
+                
+                // when
+                result = trasformerUT.viewModel(from: TestHelper().sampleRecipeDomainModel(),
+                                              imageLoader: { _ in
+                                                return AnyPublisher.empty()
+                                              })
+                
+                // then
                 expect(result).toNot(beNil())
                 
                 expect(result.title).to(equal("Curtis Stone's tomato and bread salad with BBQ eggplant and capsicum"))

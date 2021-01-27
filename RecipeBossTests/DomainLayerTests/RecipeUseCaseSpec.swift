@@ -34,7 +34,7 @@ final class RecipeUseCaseSpec: QuickSpec {
                     
                     // given
                     let serviceSpy = NetworkServiceSpy()
-                    useCase = RecipeUseCase(networkService: serviceSpy, imageLoaderService: ImageLoaderService())
+                    useCase = RecipeUseCase(networkService: serviceSpy)
                     
                     // when
                     _ = useCase.findRecipes()
@@ -51,7 +51,7 @@ final class RecipeUseCaseSpec: QuickSpec {
                         let serviceMock = NetworkServiceMock(response: TestHelper().sampleRecipeList(),
                                                              returningError: true, // fails
                                                              error: NetworkError.unAuthorized)
-                        useCase = RecipeUseCase(networkService: serviceMock, imageLoaderService: ImageLoaderService())
+                        useCase = RecipeUseCase(networkService: serviceMock)
                         
                         // when
                         useCase
@@ -79,7 +79,7 @@ final class RecipeUseCaseSpec: QuickSpec {
                         // given
                         let serviceMock = NetworkServiceMock(response: TestHelper().sampleRecipeList(),
                                                              returningError: false) // succeeds
-                        useCase = RecipeUseCase(networkService: serviceMock, imageLoaderService: ImageLoaderService())
+                        useCase = RecipeUseCase(networkService: serviceMock)
                         
                         // when
                         useCase

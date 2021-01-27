@@ -18,7 +18,7 @@ final class RecipeUseCase: RecipeUseCaseType {
 
     // MARK: - Init
     
-    init(networkService: NetworkServiceType, imageLoaderService: ImageLoaderServiceType) {
+    init(networkService: NetworkServiceType, imageLoaderService: ImageLoaderServiceType = ImageLoaderService()) {
         self.networkService = networkService
         self.imageLoaderService = imageLoaderService
     }

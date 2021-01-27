@@ -15,8 +15,9 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         
     /// Image view used in common for both modes
     @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var imageViewHeightShortConstraint: NSLayoutConstraint!
-    @IBOutlet private var imageViewHeightTallConstraint: NSLayoutConstraint!
+    @IBOutlet private var imageViewShorterHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var imageViewTallerHeightConstraint: NSLayoutConstraint!
+
     
     /// Stack view contains the items needed in compact, i.e. grid layout
     @IBOutlet private var compactStackView: UIStackView!
@@ -69,9 +70,9 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         // Size classes cannot give this value precisely for lareger iPads full screen apps.
         // This below check owrks mostly on iPhones, not on most iPads
         if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
-            activateTallerDetailCellMode()
+            activatePotraitDetailMode()
         } else {
-            activateCompactGridCellMode()
+            activateLandscapeGridMode()
         }
     }
     
@@ -88,9 +89,9 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         // Size classes cannot give this value precisely for lareger iPads full screen apps.
         // This below check owrks mostly on iPhones, not on most iPads
         if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
-            activateTallerDetailCellMode()
+            activatePotraitDetailMode()
         } else {
-            activateCompactGridCellMode()
+            activateLandscapeGridMode()
         }
         
         // Used in longer view mode in potrait style
@@ -209,18 +210,20 @@ final class RecipeCollectionViewCell: UICollectionViewCell, NibProvidable, Reusa
         imageCancellable?.cancel()
     }
     
-    private func activateCompactGridCellMode() {
+    private func activateLandscapeGridMode() {
         compactStackView.isHidden = false
-        imageViewHeightTallConstraint.isActive = true
-        imageViewHeightShortConstraint.isActive = false
+        imageViewShorterHeightConstraint.isActive = true
+        imageViewTallerHeightConstraint.isActive = false
         contentView.setNeedsLayout()
+        contentView.layoutIfNeeded()
     }
     
-    private func activateTallerDetailCellMode() {
+    private func activatePotraitDetailMode() {
         compactStackView.isHidden = true
-        imageViewHeightShortConstraint.isActive = true
-        imageViewHeightTallConstraint.isActive = false
+        imageViewTallerHeightConstraint.isActive = true
+        imageViewShorterHeightConstraint.isActive = false
         contentView.setNeedsLayout()
+        contentView.layoutIfNeeded()
     }
     
     private func applyAccessibility(from viewModel: RecipeViewModel) {

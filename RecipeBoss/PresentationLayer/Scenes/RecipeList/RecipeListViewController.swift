@@ -52,47 +52,11 @@ final class RecipeListViewController: UIViewController {
     // MARK: - Private Helpers
     
     private func configureUI() {
-
         collectionView.registerNib(cellClass: RecipeCollectionViewCell.self)
-        collectionView.collectionViewLayout = customRecipeGridLayout
+        collectionView.collectionViewLayout = customRecipeGridOrPagingLayout()
         collectionView.dataSource = dataSource
         collectionView.delegate = self
     }
-    
-    private lazy var customRecipeGridLayout: UICollectionViewLayout = {
-        
-        return UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            
-            // NOTE: THIS LOGIC IS NOT ENOUGH TO DETECT LANDSCAPE OR POTRAIT MODE
-            // Size classes cannot give this value precisely for lareger iPads full screen apps.
-            // This below check works mostly on iPhones, not on most iPads
-            let isCompactWidth = layoutEnvironment.traitCollection.horizontalSizeClass == .compact &&
-                layoutEnvironment.traitCollection.verticalSizeClass == .regular
-
-            let padding: CGFloat = isCompactWidth ? 16 : 32
-            let itemCount = isCompactWidth ? 1 : 2
-            let itemHeight = isCompactWidth ?
-                UIScreen.main.bounds.height + 220 : UIScreen.main.bounds.width / CGFloat(itemCount) * 0.75
-            
-            let size = NSCollectionLayoutSize(
-                widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
-                heightDimension: NSCollectionLayoutDimension.absolute(itemHeight))
-            let item = NSCollectionLayoutItem(layoutSize: size)
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: size,
-                                                           subitem: item,
-                                                           count: itemCount)
-            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(padding)
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: padding,
-                                                            leading: padding,
-                                                            bottom: padding,
-                                                            trailing: padding)
-            section.interGroupSpacing = padding
-            return section
-        })
-    }()
-
     
     private func bind(to viewModel: RecipeListViewModelType) {
         
@@ -147,6 +111,68 @@ final class RecipeListViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewCompositionalLayout based layout calculation
+
+extension RecipeListViewController {
+    
+    private func customRecipeGridOrPagingLayout() -> UICollectionViewLayout {
+        
+        return UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            // NOTE: THIS LOGIC IS NOT ENOUGH TO DETECT LANDSCAPE OR POTRAIT MODE
+            // Size classes cannot give this value precisely for lareger iPads full screen apps.
+            // This below check works mostly on iPhones, not on most iPads
+            
+            let isCompactWidth = layoutEnvironment.traitCollection.horizontalSizeClass == .compact &&
+                layoutEnvironment.traitCollection.verticalSizeClass == .regular
+            
+            if isCompactWidth {
+                return self.generatePotraitPagingLayout()
+            } else {
+                return self.generateLandscapeGridLayout()
+            }
+        })
+    }
+    
+    /// Generates a grid style layout
+    private func generateLandscapeGridLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
+                                              heightDimension: .fractionalHeight(1))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalWidth(0.4))
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
+    /// Generates paging style layout to flick left-right The cell item is tall and take up all of the vertiocal space
+    private func generatePotraitPagingLayout() -> NSCollectionLayoutSection {
+      let itemSize = NSCollectionLayoutSize(
+        widthDimension: .fractionalWidth(1.0),
+        heightDimension: NSCollectionLayoutDimension.absolute(CGFloat(UIScreen.main.bounds.height + 300)))
+      let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+      // Show one item plus peek on narrow screen
+      let groupFractionalWidth = 0.95
+      let groupSize = NSCollectionLayoutSize(
+        widthDimension: .fractionalWidth(CGFloat(groupFractionalWidth)),
+        heightDimension: .fractionalWidth(1.0))
+      let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                     subitem: item,
+                                                     count: 1)
+      group.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 50, trailing: 16)
+
+      let section = NSCollectionLayoutSection(group: group)
+      section.orthogonalScrollingBehavior = .groupPaging
+      return section
+    }
+}
+
 extension RecipeListViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -178,24 +204,23 @@ extension RecipeListViewController: UICollectionViewDelegate {
 
 extension RecipeListViewController {
 
-    enum Section: CaseIterable {
+    private enum Section: CaseIterable {
         case recipes
     }
 
-    func makeDataSource() -> UICollectionViewDiffableDataSource<Section, RecipeViewModel> {
+    private func makeDataSource() -> UICollectionViewDiffableDataSource<Section, RecipeViewModel> {
         return UICollectionViewDiffableDataSource(
             collectionView: collectionView,
             cellProvider: { collectionView, indexPath, recipeViewModel in
                 let cell = collectionView.dequeueReusableCell(withClass: RecipeCollectionViewCell.self,
-                                                               forIndexPath: indexPath)
+                                                              forIndexPath: indexPath)
                 cell.configure(withViewModel: recipeViewModel)
-                // TODO: cell.accessibility
                 return  cell
             }
         )
     }
 
-    func update(with recipes: [RecipeViewModel], animate: Bool = false) {
+    private func update(with recipes: [RecipeViewModel], animate: Bool = false) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, RecipeViewModel>()
         snapshot.appendSections(Section.allCases)
         snapshot.appendItems(recipes, toSection: .recipes)

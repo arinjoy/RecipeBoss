@@ -61,6 +61,8 @@
 		0EE0440725C15DE8008D4747 /* UIView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0440625C15DE8008D4747 /* UIView+Common.swift */; };
 		0EE0441125C16153008D4747 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0441025C16153008D4747 /* AccessibilityIdentifiers.swift */; };
 		0EE0441725C1726A008D4747 /* RecipeViewModelTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0441625C1726A008D4747 /* RecipeViewModelTransformerSpec.swift */; };
+		0EE0441D25C17AC1008D4747 /* RecipeListViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0441C25C17AC1008D4747 /* RecipeListViewModelSpec.swift */; };
+		0EE0442125C17D8A008D4747 /* RecipeUseCase+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0442025C17D8A008D4747 /* RecipeUseCase+TestDoubles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		0EE0440625C15DE8008D4747 /* UIView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Common.swift"; sourceTree = "<group>"; };
 		0EE0441025C16153008D4747 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		0EE0441625C1726A008D4747 /* RecipeViewModelTransformerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTransformerSpec.swift; sourceTree = "<group>"; };
+		0EE0441C25C17AC1008D4747 /* RecipeListViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModelSpec.swift; sourceTree = "<group>"; };
+		0EE0442025C17D8A008D4747 /* RecipeUseCase+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeUseCase+TestDoubles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +422,8 @@
 			isa = PBXGroup;
 			children = (
 				0EE0441625C1726A008D4747 /* RecipeViewModelTransformerSpec.swift */,
+				0EE0441C25C17AC1008D4747 /* RecipeListViewModelSpec.swift */,
+				0EE0442025C17D8A008D4747 /* RecipeUseCase+TestDoubles.swift */,
 			);
 			path = PresentationTests;
 			sourceTree = "<group>";
@@ -584,10 +590,12 @@
 				0E8705EF25BD9E39006DD94E /* RecipeList+NetworkServiceSpec.swift in Sources */,
 				0E87060025BE0FCB006DD94E /* TestHelper.swift in Sources */,
 				0EE0441725C1726A008D4747 /* RecipeViewModelTransformerSpec.swift in Sources */,
+				0EE0441D25C17AC1008D4747 /* RecipeListViewModelSpec.swift in Sources */,
 				0E8705A825BD841C006DD94E /* RecipeModel+DataMappingSpec.swift in Sources */,
 				0E8705BB25BD84D0006DD94E /* Bundle+JSONForResource.swift in Sources */,
 				0E87062925BE21C8006DD94E /* RecipeUseCaseSpec.swift in Sources */,
 				0E8705E925BD9A72006DD94E /* NetwrokServiceType+TestDoubles.swift in Sources */,
+				0EE0442125C17D8A008D4747 /* RecipeUseCase+TestDoubles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

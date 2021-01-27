@@ -2,19 +2,18 @@
 An simple recipe finder iOS app built using MVVM pattern,  clean code,  and unit testing coverage and best practices used in modern iOS programming using `Swift`.
 
 ### App Goal:
- - Showing a list of recipes from a source
+ - Showing a list of great recipes from a source
  - Showing them in grid layout in landscape mode
  - On device orientation change, show a different view with more detail of the recipe but within same container
  - Used same collection view cell dynamically using size class to detect device rotation to support both layout
  - Used `UICollectionViewCompositionalLayout` in iOS13+
- - Used `Combine` for reactiving binding
- - Load images of the recipes separately and fetch the data incrementally as user scrolls though to manage network bandwidth better
+ - Used `Combine` for reactive binding
+ - Load images of the recipes separately and cache them and fetch the data incrementally as user scrolls though to manage network bandwidth better
  
  ![](/Screenshots/lanscape_mode.png "")
  ![](/Screenshots/potrait_mode.png "")
  ![](/Screenshots/rotation_change.png "")
  
-
  
  #### JSON Data Source:
  The data for the recipes stays in local `JSON` file. But it can be loaded from a remote source url using http `GET`  if needed. Full support for network layer has been added with potential custom error handling. See usage in view model on error outcome in loading.
@@ -38,8 +37,8 @@ An simple recipe finder iOS app built using MVVM pattern,  clean code,  and unit
  - `Nimble` - To pair with Quick 👬
  
  ### Apple frameworks
-  `Combine` – To do reactive binding when needed 🤫
-  `UIKit` – To build as usual everywhere 😀
+ -  `Combine` – To do reactive binding when needed 🤫
+ -  `UIKit` – To build as usual everywhere 😀
   
 ### Clean MVVM Architecture
 

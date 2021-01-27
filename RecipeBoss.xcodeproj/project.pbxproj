@@ -60,6 +60,7 @@
 		0EE043FF25C15834008D4747 /* PlaceholderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE043FC25C15834008D4747 /* PlaceholderViewController.xib */; };
 		0EE0440725C15DE8008D4747 /* UIView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0440625C15DE8008D4747 /* UIView+Common.swift */; };
 		0EE0441125C16153008D4747 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0441025C16153008D4747 /* AccessibilityIdentifiers.swift */; };
+		0EE0441725C1726A008D4747 /* RecipeViewModelTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0441625C1726A008D4747 /* RecipeViewModelTransformerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		0EE043FC25C15834008D4747 /* PlaceholderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderViewController.xib; sourceTree = "<group>"; };
 		0EE0440625C15DE8008D4747 /* UIView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Common.swift"; sourceTree = "<group>"; };
 		0EE0441025C16153008D4747 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		0EE0441625C1726A008D4747 /* RecipeViewModelTransformerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTransformerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 		0E87059C25BD83FE006DD94E /* RecipeBossTests */ = {
 			isa = PBXGroup;
 			children = (
+				0EE0441425C17205008D4747 /* PresentationTests */,
 				0E87062525BE20E6006DD94E /* DomainLayerTests */,
 				0E8705BE25BD84DD006DD94E /* DataLayerTests */,
 				0E8705FF25BE0FCB006DD94E /* TestHelper.swift */,
@@ -409,6 +412,14 @@
 				0EE043FA25C15834008D4747 /* PlaceholderViewModel.swift */,
 			);
 			path = PlaceholderView;
+			sourceTree = "<group>";
+		};
+		0EE0441425C17205008D4747 /* PresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				0EE0441625C1726A008D4747 /* RecipeViewModelTransformerSpec.swift */,
+			);
+			path = PresentationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,6 +583,7 @@
 			files = (
 				0E8705EF25BD9E39006DD94E /* RecipeList+NetworkServiceSpec.swift in Sources */,
 				0E87060025BE0FCB006DD94E /* TestHelper.swift in Sources */,
+				0EE0441725C1726A008D4747 /* RecipeViewModelTransformerSpec.swift in Sources */,
 				0E8705A825BD841C006DD94E /* RecipeModel+DataMappingSpec.swift in Sources */,
 				0E8705BB25BD84D0006DD94E /* Bundle+JSONForResource.swift in Sources */,
 				0E87062925BE21C8006DD94E /* RecipeUseCaseSpec.swift in Sources */,

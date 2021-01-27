@@ -11,7 +11,7 @@ import Combine
 
 struct RecipeViewModelTransformer {
 
-    static func viewModel(
+    func viewModel(
         from model: RecipeModel,
         imageLoader: (URL?) -> AnyPublisher<UIImage?, Never>
     ) -> RecipeViewModel? {
@@ -22,7 +22,7 @@ struct RecipeViewModelTransformer {
                 label: UIAccessibility.createCombinedAccessibilityLabel(from: ["RECIPE", model.title]),
                 // TODO: change to `.button` type if tappable cell and detail view navigation is needed
                 // in future
-                traits: .staticText),
+                traits: UIAccessibilityTraits.none),
             title: AccessibilityConfiguration(
                 identifier: AccessibilityIdentifiers.RecipeDetail.headingNameId,
                 label: model.title,
@@ -59,7 +59,7 @@ struct RecipeViewModelTransformer {
             ingredientsHeading: AccessibilityConfiguration(
                 identifier: AccessibilityIdentifiers.RecipeDetail.ingredientHeadingId,
                 label: "Ingredients",
-                hint: "List of items you need for this recipee",
+                hint: "List of items you need for this recipe",
                 traits: .header),
             compactTitle: AccessibilityConfiguration(
                 identifier: AccessibilityIdentifiers.RecipeDetail.compactTitleId,

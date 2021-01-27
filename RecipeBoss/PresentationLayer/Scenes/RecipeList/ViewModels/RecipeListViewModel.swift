@@ -23,6 +23,9 @@ final class RecipeListViewModel: RecipeListViewModelType {
     private var imageLoadingQueue = OperationQueue()
     private var imageLoadingOperations: [IndexPath: ImageLoadOperation] = [:]
     
+    /// Transformer to convert domain models into view models
+    private let transformer: RecipeViewModelTransformer
+    
     
     // MARK: - Dependency
     
@@ -34,6 +37,7 @@ final class RecipeListViewModel: RecipeListViewModelType {
     ) {
         self.useCase = useCase
         self.router = router
+        self.transformer = RecipeViewModelTransformer()
     }
     
     
@@ -100,7 +104,7 @@ final class RecipeListViewModel: RecipeListViewModelType {
 
     private func recipeViewModels(from recipes: [RecipeModel]) -> [RecipeViewModel] {
         return recipes.map { recipe in
-            return RecipeViewModelTransformer.viewModel(
+            return transformer.viewModel(
                 from: recipe,
                 imageLoader: { [unowned self] url in
                     if let url = url {
